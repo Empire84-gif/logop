@@ -1,0 +1,3457 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Logopädie für Kinder und Jugendliche | Sprachsch[Dil] Stuttgart</title>
+
+  <meta
+    name="description"
+    content="Logopädie für Kinder und Jugendliche in Stuttgart: Informationen zu Sprachentwicklung, Aussprache, Redefluss, Lesen, Schreiben und auditiver Wahrnehmung."
+  >
+
+  <meta name="theme-color" content="#592618">
+
+  <link rel="icon" href="../photos/favicon.png" type="image/png">
+
+  <link
+    rel="preload"
+    href="../fonts/Outfit-Regular.ttf"
+    as="font"
+    type="font/ttf"
+    crossorigin
+  >
+
+  <style>
+    /* ==============================
+       FONTY
+    ============================== */
+
+    @font-face {
+      font-family: "Roboto";
+      src: url("../fonts/Roboto.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Outfit";
+      src: url("../fonts/Outfit-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ==============================
+       STYLE GLOBALNE
+    ============================== */
+
+    :root {
+      --brown: #592618;
+      --brown-dark: #3d241d;
+      --green: #b5ce4a;
+      --green-light: #dae9a9;
+      --ink: #352d28;
+      --cream: #f8f9f3;
+      --line: #e4e7dc;
+      --header-height: 125px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 16px);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      color: var(--ink);
+      background: #ffffff;
+      font-family: "Roboto", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open,
+    body.gallery-open {
+      overflow: hidden;
+    }
+
+    main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .site-header,
+    .site-footer {
+      flex-shrink: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    a,
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 5px;
+    }
+
+    .container {
+      width: min(1280px, calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .icon {
+      display: block;
+      flex: none;
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 20px;
+      z-index: 200;
+      padding: 10px 20px;
+      color: #ffffff;
+      background: var(--brown);
+    }
+
+    .skip-link:focus {
+      top: 10px;
+    }
+
+    /* ==============================
+       NAGŁÓWEK I MENU
+    ============================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #ffffff;
+      box-shadow: 0 3px 18px #392a1808;
+    }
+
+    .header-main {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      align-items: center;
+      gap: 30px;
+      min-height: 100px;
+      padding-block: 14px;
+    }
+
+    .logo-link {
+      display: block;
+    }
+
+    .logo-link img {
+      width: 230px;
+      height: 82px;
+      object-fit: contain;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 13px;
+      min-width: 0;
+    }
+
+    .primary-menu,
+    .submenu {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .primary-menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    .menu-item {
+      position: relative;
+    }
+
+    .menu-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-link {
+      display: flex;
+      align-items: center;
+      min-height: 46px;
+      padding: 0;
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.4;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .menu-link:hover {
+      color: var(--brown);
+    }
+
+    .menu-link[aria-current="page"] {
+      color: #66752c;
+    }
+
+    .submenu-toggle {
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 35px;
+      margin-left: 3px;
+      padding: 0;
+      border: 0;
+      color: var(--brown);
+      background: transparent;
+    }
+
+    .submenu-toggle .icon {
+      width: 12px;
+      height: 12px;
+      transition: transform 0.2s;
+    }
+
+    .submenu-toggle[aria-expanded="true"] .icon {
+      transform: rotate(180deg);
+    }
+
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: -15px;
+      min-width: 265px;
+      max-width: 335px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--green);
+      background: #ffffff;
+      box-shadow: 0 16px 35px #37291d20;
+    }
+
+    .submenu[hidden] {
+      display: none;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      line-height: 1.5;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .submenu a:hover {
+      color: var(--brown);
+      background: var(--cream);
+    }
+
+    .submenu-label {
+      padding: 7px 12px 10px;
+      color: #66752c;
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* PRZYCISK W MENU */
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 19px;
+      min-height: 54px;
+      padding: 8px 9px 8px 23px;
+      border: 0;
+      border-radius: 999px;
+      color: #303b11;
+      background: var(--green);
+      box-shadow: 0 6px 24px #151b0812;
+      font-family: "Roboto", Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.4;
+      white-space: nowrap;
+      transition:
+        background 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .button .icon {
+      width: 36px;
+      height: 36px;
+      padding: 10px;
+      border-radius: 50%;
+      background: #ffffff55;
+      stroke-width: 1.8;
+    }
+
+    .button:hover {
+      background: #c9df71;
+      box-shadow: 0 10px 26px #151b0820;
+      transform: translateY(-2px);
+    }
+
+    /* DANE POD MENU */
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      width: 100%;
+      font-size: 12px;
+      line-height: 1.6;
+      white-space: nowrap;
+    }
+
+    .contact-row > span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .contact-row > span + span {
+      padding-left: 12px;
+      border-left: 1px solid #dfe3d2;
+    }
+
+    .contact-row strong {
+      color: var(--brown);
+      font-weight: 600;
+    }
+
+    .contact-row a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .hours-mobile,
+    .mobile-toggle,
+    .drawer-head,
+    .drawer-footer,
+    .menu-backdrop {
+      display: none;
+    }
+
+    /* ==============================
+       HERO Z FILMEM
+    ============================== */
+
+    .kids-hero {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 340px;
+      padding: 60px 0;
+      overflow: hidden;
+      background: #695744;
+      color: #ffffff;
+    }
+
+    .kh-video {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none;
+    }
+
+    .kh-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        90deg,
+        rgba(65, 35, 24, 0.44) 0%,
+        rgba(65, 35, 24, 0.36) 50%,
+        rgba(65, 35, 24, 0.44) 100%
+      );
+      pointer-events: none;
+    }
+
+    .kh-content {
+      text-align: center;
+    }
+
+    .kh-content h1 {
+      max-width: 950px;
+      margin: 0 auto;
+      color: #ffffff;
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: clamp(38px, 4.4vw, 60px);
+      font-weight: 400;
+      line-height: 1.13;
+      letter-spacing: -1.2px;
+      text-shadow: 0 2px 18px rgb(0 0 0 / 15%);
+      animation: khTitleReveal 1.8s ease both;
+    }
+
+    .kh-content h1 span {
+      display: block;
+      color: #e3edbf;
+    }
+
+    /* IKONA PLAY / PAUSE */
+
+    .kh-video-toggle {
+      position: absolute;
+      right: 24px;
+      bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border: 1px solid rgb(255 255 255 / 45%);
+      border-radius: 50%;
+      background: rgb(35 24 18 / 25%);
+      color: #ffffff;
+      transition: background-color 180ms ease;
+    }
+
+    .kh-video-toggle[hidden] {
+      display: none;
+    }
+
+    .kh-video-toggle svg {
+      display: block;
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .kh-video-toggle .kh-play-icon {
+      display: none;
+    }
+
+    .kh-video-toggle.is-paused .kh-pause-icon {
+      display: none;
+    }
+
+    .kh-video-toggle.is-paused .kh-play-icon {
+      display: block;
+    }
+
+    .kh-video-toggle:hover {
+      background: rgb(35 24 18 / 50%);
+    }
+
+    .kh-video-toggle:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 4px;
+    }
+
+    @keyframes khTitleReveal {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==============================
+       WYŚRODKOWANE WPROWADZENIE
+    ============================== */
+
+    .kids-intro {
+      padding: 64px 0 56px;
+      background: #ffffff;
+    }
+
+    .ki-grid {
+      display: block;
+      text-align: center;
+    }
+
+    .ki-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #66752c;
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .ki-eyebrow::before {
+      content: "";
+      flex: 0 0 25px;
+      width: 25px;
+      height: 2px;
+      background: var(--green);
+    }
+
+    .ki-grid h2 {
+      margin: 0 0 22px;
+      color: var(--brown);
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: clamp(30px, 3vw, 38px);
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: -0.7px;
+    }
+
+    .ki-description {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #686457;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    /* ==============================
+       TERAPIE
+    ============================== */
+
+    .kids-therapies {
+      padding: 0 0 44px;
+      overflow-x: clip;
+      background: #ffffff;
+    }
+
+    .kt-container {
+      width: min(1280px, calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .kt-item {
+      position: relative;
+      scroll-margin-top: 0;
+    }
+
+    .kt-item + .kt-item {
+      margin-top: 34px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .kt-panel {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      align-items: center;
+      gap: 54px;
+      width: 100%;
+    }
+
+    .kt-media {
+      width: 100%;
+      min-width: 0;
+      aspect-ratio: 4 / 3;
+      margin: 0;
+      overflow: hidden;
+      background: #f3f6eb;
+      border-radius: 12px;
+    }
+
+    .kt-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .kt-copy {
+      min-width: 0;
+    }
+
+    .kt-step {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+      color: var(--brown);
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 27px;
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .kt-step::after {
+      content: "";
+      flex: 0 0 30px;
+      width: 30px;
+      height: 2px;
+      background: var(--green);
+    }
+
+    .kt-copy h2 {
+      margin: 0 0 15px;
+      color: var(--brown);
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: clamp(24px, 2.2vw, 30px);
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      text-wrap: balance;
+    }
+
+    .kt-copy p {
+      margin: 0;
+      color: #686457;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .kt-copy p + p {
+      margin-top: 11px;
+    }
+
+    .kt-copy em {
+      color: var(--brown);
+      font-style: italic;
+    }
+
+    /* WIERSZE PARZYSTE */
+
+    .kt-item:nth-child(even) .kt-panel {
+      grid-template-columns: minmax(0, 1fr) 320px;
+    }
+
+    .kt-item:nth-child(even) .kt-media {
+      order: 2;
+    }
+
+    .kt-item:nth-child(even) .kt-copy {
+      order: 1;
+      text-align: right;
+    }
+
+    .kt-item:nth-child(even) .kt-step {
+      flex-direction: row-reverse;
+    }
+
+    .kt-item:nth-child(even) .kt-step::after {
+      background: #f5d45a;
+    }
+
+    /* WJAZD Z KRAWĘDZI EKRANU */
+
+    .kids-therapies.kt-ready .kt-panel {
+      transform: translateX(-100vw);
+      transition:
+        transform 1.4s cubic-bezier(0.22, 0.68, 0.25, 1);
+    }
+
+    .kids-therapies.kt-ready
+    .kt-item:nth-child(even) .kt-panel {
+      transform: translateX(100vw);
+    }
+
+    .kids-therapies.kt-ready
+    .kt-item.is-visible .kt-panel {
+      transform: translateX(0);
+    }
+
+    /* ==============================
+       ZIELONY PAS KONTAKTOWY
+    ============================== */
+
+    .kids-cta {
+      padding: 38px 0;
+      background: var(--green);
+    }
+
+    .kc-inner {
+      text-align: center;
+    }
+
+    .kc-inner h2 {
+      margin: 0 0 12px;
+      color: var(--brown);
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: clamp(26px, 2.5vw, 34px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .kc-inner > p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #48512d;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .kc-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .kc-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 46px;
+      padding: 11px 22px;
+      border: 1.5px solid var(--brown);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--brown);
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      transition:
+        background-color 0.2s,
+        border-color 0.2s,
+        color 0.2s;
+    }
+
+    .kc-button:hover {
+      background: var(--brown);
+      border-color: var(--brown);
+      color: #ffffff;
+    }
+
+    .kc-button .icon {
+      width: 17px;
+      height: 17px;
+    }
+
+    .kc-button:focus-visible {
+      outline: 2px solid var(--brown);
+      outline-offset: 4px;
+    }
+
+    /* ==============================
+       STOPKA
+    ============================== */
+
+    .site-footer {
+      padding: 36px 0 18px;
+      background: linear-gradient(
+        115deg,
+        #fff1c5 0%,
+        #f8e8ad 55%,
+        #f4dfa0 100%
+      );
+      border-top: 1px solid #e4ce8d;
+      color: var(--brown);
+    }
+
+    .ft-container {
+      width: min(1280px, calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .ft-main {
+      display: grid;
+      grid-template-columns:
+        minmax(190px, 0.95fr)
+        minmax(250px, 1.05fr)
+        minmax(300px, 1.3fr);
+      align-items: center;
+      gap: 38px;
+    }
+
+    .ft-brand,
+    .ft-info,
+    .ft-nav,
+    .ft-nav li {
+      min-width: 0;
+    }
+
+    .ft-logo {
+      display: block;
+      width: 205px;
+      max-width: 100%;
+    }
+
+    .ft-logo img {
+      width: 100%;
+      height: auto;
+    }
+
+    .ft-brand-description {
+      margin: 12px 0 0;
+      color: #76523a;
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ft-title {
+      margin: 0 0 10px;
+      color: var(--brown);
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+    }
+
+    .ft-address {
+      margin: 0 0 9px;
+      color: #6d4934;
+      font-size: 12px;
+      font-style: normal;
+      line-height: 1.7;
+    }
+
+    .ft-contact {
+      color: var(--brown);
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .ft-contact p {
+      margin: 0;
+    }
+
+    .ft-contact a {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .ft-label {
+      display: inline-block;
+      min-width: 51px;
+      color: #806047;
+    }
+
+    .ft-contact .ft-email {
+      margin-top: 5px;
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .ft-contact a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .ft-nav ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ft-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 45px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgb(89 38 24 / 22%);
+      color: var(--brown);
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.4;
+      transition:
+        color 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .ft-arrow {
+      flex-shrink: 0;
+      color: #8a6645;
+      font-size: 19px;
+      line-height: 1;
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .ft-nav a:hover {
+      border-color: var(--brown);
+      color: #35160e;
+    }
+
+    .ft-nav a:hover .ft-arrow {
+      color: var(--brown);
+      transform: translate(2px, -2px);
+    }
+
+    .ft-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 24px;
+      margin-top: 28px;
+      padding-top: 15px;
+      border-top: 1px solid rgb(89 38 24 / 18%);
+    }
+
+    .ft-copyright {
+      margin: 0;
+      color: #806047;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .ft-legal {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .ft-legal a {
+      color: #6d4934;
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .ft-legal a:hover {
+      color: var(--brown);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .site-footer a:focus-visible {
+      outline: 2px solid var(--brown);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    /* ==============================
+       GALERIA PRAXIS
+    ============================== */
+
+    .praxis-dialog {
+      width: min(1100px, calc(100% - 36px));
+      max-height: 90svh;
+      padding: 0;
+      overflow: auto;
+      border: 0;
+      border-radius: 15px;
+      color: var(--ink);
+      background: #fafbf6;
+      box-shadow: 0 30px 100px #0005;
+    }
+
+    .praxis-dialog::backdrop {
+      background: #182014d9;
+      backdrop-filter: blur(6px);
+    }
+
+    .praxis-dialog-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .praxis-dialog h2 {
+      margin: 0;
+      font-family: "Outfit", Arial, sans-serif;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .praxis-close {
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid #dce4ce;
+      border-radius: 50%;
+      color: var(--brown);
+      background: #eef3e1;
+    }
+
+    .praxis-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding: 25px;
+    }
+
+    .praxis-photos img {
+      width: 100%;
+      height: 260px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .praxis-photos img:first-child {
+      grid-column: 1 / -1;
+      height: 370px;
+      object-position: 50% 32%;
+    }
+
+    .praxis-caption {
+      margin: 0;
+      padding: 0 28px 24px;
+      color: #655f56;
+      font-size: 13px;
+    }
+
+    /* ==============================
+       DESKTOP — OD 1024 PX
+    ============================== */
+
+    @media (min-width: 1024px) {
+      .menu-contact {
+        min-height: 42px;
+        padding: 5px 7px 5px 18px;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .menu-contact .icon {
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+      }
+
+      .kh-video {
+        object-position: center 30%;
+      }
+    }
+
+    /* MNIEJSZY DESKTOP */
+
+    @media (min-width: 1024px) and (max-width: 1180px) {
+      .container,
+      .kt-container,
+      .ft-container {
+        width: calc(100% - 40px);
+      }
+
+      .header-main {
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 20px;
+        min-height: 112px;
+      }
+
+      .logo-link img {
+        width: 180px;
+        height: 68px;
+      }
+
+      .primary-menu {
+        gap: 12px;
+      }
+
+      .menu-link {
+        font-size: 13px;
+      }
+
+      .contact-row {
+        gap: 9px;
+        font-size: 10.5px;
+      }
+
+      .contact-row > span + span {
+        padding-left: 9px;
+      }
+
+      .kt-panel {
+        grid-template-columns: 280px minmax(0, 1fr);
+        gap: 34px;
+      }
+
+      .kt-item:nth-child(even) .kt-panel {
+        grid-template-columns: minmax(0, 1fr) 280px;
+      }
+
+      .kt-copy h2 {
+        font-size: 26px;
+      }
+
+      .ft-main {
+        grid-template-columns:
+          minmax(170px, 0.85fr)
+          minmax(240px, 1.05fr)
+          minmax(290px, 1.3fr);
+        gap: 25px;
+      }
+
+      .ft-logo {
+        width: 180px;
+      }
+
+      .ft-nav ul {
+        column-gap: 18px;
+      }
+
+      .ft-nav a {
+        font-size: 14px;
+      }
+    }
+
+    /* ==============================
+       MOBILE / TABLET — DO 1023 PX
+    ============================== */
+
+    @media (max-width: 1023px) {
+      html {
+        scroll-padding-top: 20px;
+      }
+
+      .container,
+      .kt-container,
+      .ft-container {
+        width: calc(100% - 40px);
+      }
+
+      .site-header {
+        position: relative;
+      }
+
+      .header-main {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0 20px;
+        min-height: 0;
+        padding-top: 12px;
+        padding-bottom: 0;
+      }
+
+      .logo-link img {
+        width: 230px;
+        height: 76px;
+      }
+
+      .header-content {
+        display: contents;
+      }
+
+      .contact-strip {
+        grid-column: 1 / -1;
+        margin-top: 12px;
+        margin-inline: -20px;
+        padding-inline: 20px;
+        border-top: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .contact-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: start;
+        gap: 12px 24px;
+        padding-block: 19px;
+        font-size: 13px;
+        white-space: normal;
+      }
+
+      .contact-row > span {
+        align-items: flex-start;
+        gap: 5px;
+        line-height: 1.65;
+      }
+
+      .contact-row > span + span {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .contact-row a {
+        overflow-wrap: anywhere;
+      }
+
+      .hours-line {
+        flex-wrap: wrap;
+      }
+
+      .hours-line strong {
+        flex-basis: 100%;
+      }
+
+      .hours-desktop {
+        display: none;
+      }
+
+      .hours-mobile {
+        display: block;
+        line-height: 1.8;
+      }
+
+      /* BURGER */
+
+      .mobile-toggle {
+        display: grid;
+        place-items: center;
+        justify-self: end;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border: 1px solid #dee4d0;
+        border-radius: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 12px #35401708;
+      }
+
+      .mobile-toggle:hover {
+        background: #eef3df;
+      }
+
+      .burger-lines {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+        width: 22px;
+      }
+
+      .burger-lines i {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--brown);
+      }
+
+      .burger-lines i:last-child {
+        width: 15px;
+      }
+
+      /* MENU BOCZNE */
+
+      .nav-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 101;
+        width: min(430px, calc(100% - 24px));
+        padding: 0 25px max(30px, env(safe-area-inset-bottom));
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        background: #ffffff;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: transform 0.25s, visibility 0.25s;
+      }
+
+      .nav-bar.is-open {
+        visibility: visible;
+        transform: translateX(0);
+      }
+
+      .drawer-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        min-height: 105px;
+        margin-bottom: 19px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .drawer-logo {
+        width: 205px;
+        height: 79px;
+        object-fit: contain;
+      }
+
+      .drawer-close {
+        display: grid;
+        place-items: center;
+        flex: none;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 1px solid #e0e6d2;
+        border-radius: 50%;
+        color: var(--brown);
+        background: #f1f4e7;
+      }
+
+      .primary-menu {
+        display: block;
+      }
+
+      .menu-item {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .menu-row {
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .menu-link {
+        flex: 1;
+        min-height: 55px;
+        padding-block: 12px;
+        font-size: 15px;
+        white-space: normal;
+      }
+
+      .menu-contact {
+        margin-block: 15px;
+      }
+
+      .submenu-toggle {
+        width: 42px;
+        height: 42px;
+        margin: 6px -6px 6px 0;
+      }
+
+      .submenu-toggle .icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      .submenu {
+        position: static;
+        min-width: 0;
+        max-width: none;
+        padding: 0 0 15px 12px;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .submenu a {
+        border-left: 2px solid #e4eccd;
+        border-radius: 0;
+        font-size: 14px;
+      }
+
+      .submenu-label {
+        display: none;
+      }
+
+      .drawer-footer {
+        display: block;
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        font-size: 13px;
+      }
+
+      .drawer-footer a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-block: 8px;
+        overflow-wrap: anywhere;
+      }
+
+      .drawer-footer .icon {
+        color: #66752c;
+      }
+
+      .menu-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+        display: block;
+        background: #24271d80;
+        backdrop-filter: blur(3px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s, visibility 0.25s;
+      }
+
+      .menu-backdrop.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* HERO */
+
+      .kids-hero {
+        min-height: 270px;
+        padding: 45px 0 55px;
+      }
+
+      .kh-content h1 {
+        font-size: clamp(32px, 6vw, 46px);
+        line-height: 1.16;
+        letter-spacing: -0.7px;
+      }
+
+      .kh-video-toggle {
+        right: 20px;
+        bottom: 13px;
+        width: 34px;
+        height: 34px;
+      }
+
+      /* WPROWADZENIE */
+
+      .kids-intro {
+        padding: 44px 0 36px;
+      }
+
+      .ki-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+      }
+
+      .ki-grid h2 {
+        font-size: 32px;
+      }
+
+      /* TERAPIE */
+
+      .kids-therapies {
+        padding: 0 0 34px;
+      }
+
+      .kt-item + .kt-item {
+        margin-top: 29px;
+        padding-top: 29px;
+      }
+
+      .kt-panel,
+      .kt-item:nth-child(even) .kt-panel {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+      }
+
+      .kt-media,
+      .kt-item:nth-child(even) .kt-media {
+        order: 0;
+        max-width: 420px;
+        margin-inline: auto;
+      }
+
+      .kt-copy,
+      .kt-item:nth-child(even) .kt-copy {
+        order: 1;
+        text-align: left;
+      }
+
+      .kt-step,
+      .kt-item:nth-child(even) .kt-step {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        font-size: 25px;
+      }
+
+      .kt-copy h2 {
+        margin-bottom: 13px;
+        font-size: clamp(24px, 4.8vw, 29px);
+      }
+
+      .kt-copy p {
+        line-height: 1.8;
+      }
+
+      /* ZIELONY PAS */
+
+      .kids-cta {
+        padding: 30px 0;
+      }
+
+      .kc-inner h2 {
+        font-size: 28px;
+      }
+
+      .kc-actions {
+        gap: 10px;
+      }
+
+      .kc-button {
+        font-size: 13px;
+      }
+
+      /* STOPKA */
+
+      .site-footer {
+        padding: 26px 0 17px;
+        text-align: center;
+      }
+
+      .ft-main {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 21px;
+      }
+
+      .ft-logo {
+        width: 170px;
+        margin-inline: auto;
+      }
+
+      .ft-brand-description {
+        margin-top: 8px;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .ft-title {
+        margin-bottom: 7px;
+        font-size: 20px;
+      }
+
+      .ft-address {
+        margin-bottom: 6px;
+      }
+
+      .ft-contact {
+        line-height: 1.75;
+      }
+
+      .ft-contact a {
+        margin-inline: auto;
+      }
+
+      .ft-contact .ft-email {
+        margin-top: 4px;
+        font-size: 13px;
+      }
+
+      .ft-nav {
+        width: 100%;
+        max-width: 440px;
+      }
+
+      .ft-nav ul {
+        gap: 4px 20px;
+      }
+
+      .ft-nav a {
+        min-height: 43px;
+        padding: 9px 0;
+        font-size: 13px;
+        text-align: left;
+      }
+
+      .ft-arrow {
+        font-size: 17px;
+      }
+
+      .ft-bottom {
+        flex-direction: column;
+        gap: 9px;
+        margin-top: 21px;
+        padding-top: 12px;
+      }
+
+      .ft-legal {
+        order: -1;
+        justify-content: center;
+        gap: 22px;
+      }
+    }
+
+    /* SMARTPHONE */
+
+    @media (max-width: 600px) {
+      .header-main {
+        padding-top: 9px;
+      }
+
+      .logo-link img {
+        width: 220px;
+        height: 73px;
+      }
+
+      .contact-strip {
+        margin-top: 8px;
+      }
+
+      .contact-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding-block: 16px 18px;
+      }
+
+      .contact-row > span {
+        gap: 6px;
+      }
+
+      .hours-line {
+        row-gap: 2px;
+        margin-top: 3px;
+        padding-top: 11px;
+        border-top: 1px solid #e0e5d6;
+      }
+
+      .hours-mobile {
+        font-size: 12px;
+      }
+
+      .drawer-head {
+        gap: 12px;
+        min-height: 100px;
+      }
+
+      .drawer-logo {
+        width: 190px;
+        height: 73px;
+      }
+
+      .praxis-dialog-head {
+        padding: 19px;
+      }
+
+      .praxis-dialog h2 {
+        font-size: 23px;
+      }
+
+      .praxis-photos {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 17px;
+      }
+
+      .praxis-photos img,
+      .praxis-photos img:first-child {
+        grid-column: auto;
+        height: 230px;
+      }
+
+      .praxis-caption {
+        padding: 0 19px 20px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .logo-link img {
+        width: 190px;
+        height: 68px;
+      }
+
+      .contact-row {
+        font-size: 12px;
+      }
+
+      .drawer-logo {
+        width: 170px;
+        height: 65px;
+      }
+
+      .button {
+        gap: 10px;
+        padding-left: 16px;
+        font-size: 13px;
+      }
+    }
+
+    /* ==============================
+       OGRANICZENIE RUCHU
+    ============================== */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .kids-therapies.kt-ready .kt-panel,
+      .kids-therapies.kt-ready
+      .kt-item:nth-child(even) .kt-panel {
+        transform: none;
+      }
+    }
+
+    /* POWRÓT NA GÓRĘ */
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 90;
+
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: #592618;
+  color: #fff;
+
+  box-shadow: 0 5px 18px rgba(59, 30, 20, 0.16);
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+.back-to-top svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid #592618;
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back-to-top:hover {
+    background: #f5d45a;
+    color: #592618;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(59, 30, 20, 0.2);
+  }
+}
+
+@media (max-width: 1023px) {
+  .back-to-top {
+    right: 18px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    width: 42px;
+    height: 42px;
+  }
+
+  .back-to-top svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- ==============================
+       IKONY SVG
+  ============================== -->
+
+  <svg
+    width="0"
+    height="0"
+    aria-hidden="true"
+    style="position:absolute"
+  >
+    <defs>
+      <symbol id="phone" viewBox="0 0 24 24">
+        <path d="M7.5 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3.5l-5-2-2 2a14 14 0 0 1-6.5-6.5l2-2Z"/>
+      </symbol>
+
+      <symbol id="mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m3 6 9 7 9-7"/>
+      </symbol>
+
+      <symbol id="chevron" viewBox="0 0 24 24">
+        <path d="m6 9 6 6 6-6"/>
+      </symbol>
+
+      <symbol id="arrow-up" viewBox="0 0 24 24">
+        <path d="M6 18 18 6M6 6h12v12"/>
+      </symbol>
+
+      <symbol id="close" viewBox="0 0 24 24">
+        <path d="m5 5 14 14M5 19 19 5"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a href="#main" class="skip-link">
+    Zum Inhalt springen
+  </a>
+
+  <!-- ==============================
+       NAVBAR
+  ============================== -->
+
+  <header class="site-header">
+    <div class="container header-main">
+
+      <!-- LOGO -->
+
+      <a
+        href="/index.html"
+        class="logo-link"
+        aria-label="Sprachsch[Dil] – Startseite"
+      >
+        <img
+          src="/photos/logo.png"
+          alt="Sprachsch[Dil] – Praxis für Logopädie"
+          width="2025"
+          height="776"
+        >
+      </a>
+
+      <!-- PRZYCISK MENU MOBILNEGO -->
+
+      <button
+        type="button"
+        class="mobile-toggle"
+        aria-label="Hauptmenü öffnen"
+        aria-controls="main-navigation"
+        aria-expanded="false"
+      >
+        <span class="burger-lines" aria-hidden="true">
+          <i></i>
+          <i></i>
+        </span>
+      </button>
+
+      <div class="header-content">
+
+        <nav
+          class="nav-bar"
+          id="main-navigation"
+          aria-label="Hauptnavigation"
+        >
+          <div class="nav-inner">
+
+            <!-- NAGŁÓWEK MENU MOBILNEGO -->
+
+            <div class="drawer-head">
+              <img
+                class="drawer-logo"
+                src="/photos/logo.png"
+                alt="Sprachsch[Dil] – Praxis für Logopädie"
+                width="2025"
+                height="776"
+              >
+
+              <button
+                class="drawer-close"
+                type="button"
+                aria-label="Hauptmenü schließen"
+              >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#close"/>
+                </svg>
+              </button>
+            </div>
+
+            <ul class="primary-menu">
+
+              <!-- HOME -->
+
+              <li class="menu-item">
+                <div class="menu-row">
+                  <a href="/index.html" class="menu-link">
+                    Home
+                  </a>
+                </div>
+              </li>
+
+              <!-- ZESPÓŁ -->
+
+              <li class="menu-item has-submenu">
+                <div class="menu-row">
+                  <a href="/index.html#team" class="menu-link">
+                    Wer wir sind
+                  </a>
+
+                  <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-team"
+                    aria-label="Untermenü Wer wir sind"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#chevron"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul class="submenu" id="submenu-team" hidden>
+                  <li class="submenu-label" aria-hidden="true">
+                    Unser Team
+                  </li>
+
+                  <li>
+                    <a href="/#eva-katharina-weber">
+                      Eva Katharina Weber
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/#lena-pasqualini">
+                      Lena Pasqualini
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- TERAPIA DOROSŁYCH -->
+
+              <li class="menu-item has-submenu">
+                <div class="menu-row">
+                  <a
+                    href="/therapie-erwachsene/"
+                    class="menu-link"
+                  >
+                    Therapie Erwachsene
+                  </a>
+
+                  <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-adults"
+                    aria-label="Untermenü Therapie Erwachsene"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#chevron"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul class="submenu" id="submenu-adults" hidden>
+                  <li class="submenu-label" aria-hidden="true">
+                    Therapie für Erwachsene
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#aphasie">
+                      Aphasie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#dysarthrie">
+                      Dysarthrophonie / Dysarthrie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#sprechapraxie">
+                      Sprechapraxie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#dysphagie">
+                      Dysphagie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#facialislaehmung">
+                      Facialislähmung
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#dysphonie">
+                      Dysphonie
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- TERAPIA DZIECI I MŁODZIEŻY -->
+
+              <li class="menu-item has-submenu">
+                <div class="menu-row">
+                  <a
+                    href="/therapie-kinder-und-jugendliche/"
+                    class="menu-link"
+                  >
+                    Therapie Kinder und Jugendliche
+                  </a>
+
+                  <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-children"
+                    aria-label="Untermenü Therapie Kinder und Jugendliche"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#chevron"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul class="submenu" id="submenu-children" hidden>
+                  <li class="submenu-label" aria-hidden="true">
+                    Therapie für Kinder &amp; Jugendliche
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#sprachentwicklungsstoerung">
+                      Sprachentwicklungsstörung
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#aussprachestoerungen">
+                      Aussprachestörungen
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#myofunktionelle-dysfunktion">
+                      Myofunktionelle Dysfunktion / Orofaziale Störung
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#stoerungen-des-redeflusses">
+                      Störungen des Redeflusses
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#lese-rechtschreib-stoerungen">
+                      Lese-Rechtschreib-Störungen
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#auditive-wahrnehmung">
+                      Auditive Wahrnehmungs- und Verarbeitungsstörung
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- GALERIA PRAXIS -->
+
+              <li class="menu-item">
+                <div class="menu-row">
+                  <a
+                    href="#praxis-title"
+                    class="menu-link"
+                    data-open-praxis
+                  >
+                    Praxis
+                  </a>
+                </div>
+              </li>
+
+              <!-- KONTAKT -->
+
+              <li class="menu-item">
+                <div class="menu-row">
+                  <a
+                    href="/index.html#kontakt"
+                    class="button menu-contact"
+                  >
+                    Kontakt
+
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#arrow-up"/>
+                    </svg>
+                  </a>
+                </div>
+              </li>
+
+            </ul>
+
+            <!-- KONTAKT W MENU MOBILNYM -->
+
+            <div class="drawer-footer">
+              <a href="tel:+4971188811074">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#phone"/>
+                </svg>
+
+                0711 888 110 74
+              </a>
+
+              <a href="mailto:info@stuttgarter-logopaedie.de">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#mail"/>
+                </svg>
+
+                info@stuttgarter-logopaedie.de
+              </a>
+            </div>
+
+          </div>
+        </nav>
+
+        <!-- DANE POD MENU -->
+
+        <div class="contact-strip">
+          <div class="contact-row">
+
+            <span>
+              <strong>Telefon:</strong>
+
+              <a href="tel:+4971188811074">
+                0711 888 110 74
+              </a>
+            </span>
+
+            <span>
+              <strong>Ort:</strong>
+              Schlosserstraße 5 in 70180 Stuttgart
+            </span>
+
+            <span>
+              <strong>E-Mail:</strong>
+
+              <a href="mailto:info@stuttgarter-logopaedie.de">
+                info@stuttgarter-logopaedie.de
+              </a>
+            </span>
+
+            <span class="hours-line">
+              <strong>Sprechzeiten:</strong>
+
+              <span class="hours-desktop">
+                Mo–Fr 08:00–19:00 · Sa 09:00–14:00 Uhr
+              </span>
+
+              <span class="hours-mobile">
+                Montag – Freitag: 08:00–19:00 Uhr<br>
+                Samstag: 09:00–14:00 Uhr
+              </span>
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-backdrop" aria-hidden="true"></div>
+
+  <!-- ==============================
+       TREŚĆ
+  ============================== -->
+
+  <main id="main" tabindex="-1">
+
+    <!-- HERO -->
+
+    <section class="kids-hero" aria-labelledby="kh-title">
+      <video
+        class="kh-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src="../photos/herokinder.mp4" type="video/mp4">
+      </video>
+
+      <div class="kh-overlay" aria-hidden="true"></div>
+
+      <div class="container kh-content">
+        <h1 id="kh-title">
+          Therapie für Kinder
+          <span>und Jugendliche</span>
+        </h1>
+      </div>
+
+      <button
+        class="kh-video-toggle"
+        type="button"
+        aria-label="Hintergrundvideo pausieren"
+        hidden
+      >
+        <svg
+          class="kh-pause-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <rect x="7" y="5" width="3" height="14" rx="0.7"/>
+          <rect x="14" y="5" width="3" height="14" rx="0.7"/>
+        </svg>
+
+        <svg
+          class="kh-play-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="m9 5 11 7-11 7Z"/>
+        </svg>
+      </button>
+    </section>
+
+    <!-- WPROWADZENIE -->
+
+    <section class="kids-intro" aria-labelledby="ki-title">
+      <div class="container ki-grid">
+        <div>
+          <p class="ki-eyebrow">
+            Sprache entdecken. Entwicklung begleiten.
+          </p>
+
+          <h2 id="ki-title">
+            Kleine Schritte.<br>
+            Neue Möglichkeiten.
+          </h2>
+        </div>
+
+        <p class="ki-description">
+          Jedes Kind bringt eigene Stärken und Bedürfnisse mit.
+          Wir begleiten Kinder und Jugendliche dabei, ihre
+          sprachlichen und kommunikativen Fähigkeiten zu entwickeln.
+          Hier erfahren Sie mehr über die unterschiedlichen
+          Störungsbilder und unsere Behandlungsfelder.
+        </p>
+      </div>
+    </section>
+
+    <!-- TERAPIE -->
+
+    <div class="kids-therapies">
+      <div class="kt-container">
+
+        <!-- 01 -->
+
+        <section
+          class="kt-item"
+          id="sprachentwicklungsstoerung"
+          aria-labelledby="kt-title-01"
+        >
+          <div class="kt-panel">
+            <figure class="kt-media">
+             <img
+  src="../photos/kinder-sprachentwicklung.png"
+  alt="Kind übt mit einer Logopädin das Benennen von Bildern."
+  title="Spielerische Förderung der Sprachentwicklung"
+  width="1448"
+  height="1086"
+  loading="lazy"
+  decoding="async"
+>
+            </figure>
+
+            <div class="kt-copy">
+              <div class="kt-step" aria-hidden="true">
+                <span>01</span>
+              </div>
+
+              <h2 id="kt-title-01">
+                Sprachentwicklungsstörungen
+              </h2>
+
+              <p>
+                Sprachentwicklungsstörungen (SES) können mit
+                mangelndem Sprachverständnis, geringem Wortschatz
+                und nicht ausgereifter oder fehlerhafter Grammatik
+                einhergehen.
+              </p>
+
+              <p>
+                Um situationsgerecht handeln zu können, bedarf es
+                eines ausreichenden Wortschatzes, einer guten
+                Satzbildung und eines gründlichen Sprachverstehens.
+                Bei einer SES sind oft mehrere Bereiche gleichzeitig
+                betroffen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 -->
+
+        <section
+          class="kt-item"
+          id="aussprachestoerungen"
+          aria-labelledby="kt-title-02"
+        >
+          <div class="kt-panel">
+            <figure class="kt-media">
+             <img
+  src="../photos/kinder-aussprache.png"
+  alt="Jugendlicher übt die Lautbildung vor einem Handspiegel."
+  title="Ausspracheübungen für Jugendliche"
+  width="1448"
+  height="1086"
+  loading="lazy"
+  decoding="async"
+>
+            </figure>
+
+            <div class="kt-copy">
+              <div class="kt-step" aria-hidden="true">
+                <span>02</span>
+              </div>
+
+              <h2 id="kt-title-02">
+                Aussprachestörungen
+              </h2>
+
+              <p>
+                Aussprachestörungen lassen sich in zwei Arten unterteilen.
+              </p>
+
+              <p>
+                Bei der phonologischen Störung werden in Wörtern
+                Laute ersetzt oder vertauscht. Des Weiteren können
+                Laute ausgelassen werden. Häufige Beispiele sind:
+                statt Kasse <em>Tasse</em> oder statt Schmetterling
+                <em>Metterlin</em>.
+              </p>
+
+              <p>
+                Bei der phonetischen Störung ist die Aussprache
+                von Lauten betroffen. Die Kinder können die Laute
+                nicht korrekt bilden. Am bekanntesten ist die
+                fehlerhafte Bildung des Lautes <em>s</em> zwischen
+                den oberen und unteren Frontzähnen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 -->
+
+        <section
+          class="kt-item"
+          id="myofunktionelle-dysfunktion"
+          aria-labelledby="kt-title-03"
+        >
+          <div class="kt-panel">
+            <figure class="kt-media">
+             <img
+  src="../photos/kinder-myofunktion.png"
+  alt="Mädchen zeigt bei leicht geöffnetem Mund die Zungenspitze."
+  title="Myofunktion und Mundmotorik bei Kindern"
+  width="1448"
+  height="1086"
+  loading="lazy"
+  decoding="async"
+>
+            </figure>
+
+            <div class="kt-copy">
+              <div class="kt-step" aria-hidden="true">
+                <span>03</span>
+              </div>
+
+              <h2 id="kt-title-03">
+                Myofunktionelle Dysfunktion oder Orofaziale Störung
+              </h2>
+
+              <p>
+                Die Myofunktionelle Dysfunktion (MFS), genannt auch
+                Orofaziale Störung (OFS), wird durch ein Ungleichgewicht
+                der Muskeln von Zunge, Lippen und Gesicht gekennzeichnet.
+              </p>
+
+              <p>
+                Häufig wird die MFS durch eine fehlerhafte Kiefer-
+                und Zahnstellung begünstigt und/oder kann diese
+                verursachen. Infolge dieser Faktoren geschieht der
+                Schluckakt nicht korrekt und fördert die MFS.
+              </p>
+
+              <p>
+                Nicht selten gehen mit der MFS auch
+                Aussprachestörungen einher. Betroffene sprechen
+                die Laute /sch/, /s/ oder /ch/ nicht korrekt aus.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 04 -->
+
+        <section
+          class="kt-item"
+          id="stoerungen-des-redeflusses"
+          aria-labelledby="kt-title-04"
+        >
+          <div class="kt-panel">
+            <figure class="kt-media">
+              <img
+  src="../photos/kinder-redefluss.png"
+  alt="Jugendliche spricht und begleitet ihre Worte mit einer offenen Handbewegung."
+  title="Sprechen und Kommunikation im Jugendalter"
+  width="1448"
+  height="1086"
+  loading="lazy"
+  decoding="async"
+>
+            </figure>
+
+            <div class="kt-copy">
+              <div class="kt-step" aria-hidden="true">
+                <span>04</span>
+              </div>
+
+              <h2 id="kt-title-04">
+                Redeflussstörungen
+              </h2>
+
+              <p>
+                Unterteilt werden Störungen des Redeflusses
+                in Stottern und Poltern.
+              </p>
+
+              <p>
+                Beim Stottern lassen sich Haupt- und Nebensymptome
+                unterscheiden. Die Hauptsymptome stellen sich in
+                Form von Wiederholungen von Lauten, Silben,
+                Wörtern, Satzteilen oder kurzen Sätzen dar.
+                Sprechblockaden können eine weitere Form der
+                Unflüssigkeit sein.
+              </p>
+
+              <p>
+                Poltern kann auf unterschiedliche Art und Weise
+                auftreten. Häufig ist eine zu schnelle und
+                unregelmäßige Sprechgeschwindigkeit zu beobachten.
+                Dadurch können Laute ersetzt oder ausgelassen werden.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 05 -->
+
+        <section
+          class="kt-item"
+          id="lese-rechtschreib-stoerungen"
+          aria-labelledby="kt-title-05"
+        >
+          <div class="kt-panel">
+            <figure class="kt-media">
+              <img
+  src="../photos/kinder-lrs.png"
+  alt="Junge mit Brille und rotem Pullover liest aufmerksam in einem Buch."
+  title="Lesen und Schriftsprachentwicklung bei Kindern"
+  width="1448"
+  height="1086"
+  loading="lazy"
+  decoding="async"
+>
+            </figure>
+
+            <div class="kt-copy">
+              <div class="kt-step" aria-hidden="true">
+                <span>05</span>
+              </div>
+
+              <h2 id="kt-title-05">
+                Lese-Rechtschreib-Störung
+              </h2>
+
+              <p>
+                Die Lese-Rechtschreib-Störung (LRS) ist eine
+                Teilleistungsstörung, d. h. bei einer durchschnittlichen
+                oder überdurchschnittlichen allgemeinen Begabung
+                sind ausschließlich in den Bereichen Lesen und/oder
+                Schreiben Schwierigkeiten vorhanden.
+              </p>
+
+              <p>
+                Die Weltgesundheitsorganisation (WHO) beschreibt
+                die LRS als eine „Entwicklungsbeeinträchtigung
+                schulischer Fertigkeiten“.
+              </p>
+
+              <p>
+                Wird im Kindesalter die LRS nicht festgestellt
+                und behandelt, so kann sie bis ins Erwachsenenalter
+                fortbestehen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 06 -->
+
+        <section
+          class="kt-item"
+          id="auditive-wahrnehmung"
+          aria-labelledby="kt-title-06"
+        >
+          <div class="kt-panel">
+            <figure class="kt-media">
+              <img
+  src="../photos/kinder-auditive-wahrnehmung.png"
+  alt="Mädchen hört aufmerksam über Kopfhörer und hält eine Hand an die Ohrmuschel."
+  title="Zuhören und auditive Wahrnehmung"
+  width="1448"
+  height="1086"
+  loading="lazy"
+  decoding="async"
+>
+            </figure>
+
+            <div class="kt-copy">
+              <div class="kt-step" aria-hidden="true">
+                <span>06</span>
+              </div>
+
+              <h2 id="kt-title-06">
+                Auditive Wahrnehmungs- und Verarbeitungsstörung
+              </h2>
+
+              <p>
+                Das Hören über das Organ Ohr ist bei dieser
+                Störung nicht betroffen, vielmehr bestehen
+                Schwierigkeiten bei der feinen Unterscheidung
+                von Lauten, dem Erkennen und Verstehen
+                akustischer Signale.
+              </p>
+
+              <p>
+                Auditive Signale können weder zeitlich noch
+                örtlich genau bestimmt werden. Es entsteht eine
+                Informationsverarbeitungsstörung, die große
+                Auswirkungen auf die sprachlichen und
+                schriftsprachlichen Leistungen hat.
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ZIELONY PAS Z DWOMA PRZYCISKAMI -->
+
+    <section class="kids-cta" aria-labelledby="kc-title">
+      <div class="container kc-inner">
+        <h2 id="kc-title">
+          Gemeinsam den nächsten Schritt gehen.
+        </h2>
+
+        <p>
+          Sie möchten einen Termin vereinbaren oder haben Fragen
+          zur logopädischen Behandlung Ihres Kindes?
+          Wir nehmen uns Zeit für Ihr Anliegen und besprechen
+          gemeinsam, wie wir Ihr Kind unterstützen können.
+        </p>
+
+        <div class="kc-actions">
+          <a class="kc-button" href="/index.html#kontakt">
+            Kontakt aufnehmen
+
+            <svg class="icon" aria-hidden="true">
+              <use href="#arrow-up"/>
+            </svg>
+          </a>
+
+          <a
+            class="kc-button"
+            href="mailto:info@stuttgarter-logopaedie.de"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="#mail"/>
+            </svg>
+
+            E-Mail schreiben
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+       STOPKA
+  ============================== -->
+
+ <footer class="site-footer">
+  <div class="ft-container">
+    <div class="ft-main">
+
+      <div class="ft-brand">
+        <a
+          class="ft-logo"
+          href="/index.html"
+          aria-label="Sprachsch[Dil] – Startseite"
+        >
+          <img
+            src="/photos/logo.png"
+            alt="Sprachsch[Dil] – Praxis für Logopädie"
+            width="2025"
+            height="776"
+            loading="lazy"
+            decoding="async"
+          >
+        </a>
+
+        <p class="ft-brand-description">
+          Praxisgemeinschaft für Logopädie<br>
+          im Herzen von Stuttgart.
+        </p>
+      </div>
+
+      <div class="ft-info">
+        <h2 class="ft-title">
+          Wir sind für Sie da.
+        </h2>
+
+        <address class="ft-address">
+          Schlosserstraße 5 · 70180 Stuttgart
+        </address>
+
+        <div class="ft-contact">
+          <a href="tel:+4971188811074">
+            <span class="ft-label">Telefon</span>
+            +49 (0)711 88811074
+          </a>
+
+          <p>
+            <span class="ft-label">Fax</span>
+            +49 (0)711 41004018
+          </p>
+
+          <a
+            class="ft-email"
+            href="mailto:info@stuttgarter-logopaedie.de"
+          >
+            info@stuttgarter-logopaedie.de
+          </a>
+        </div>
+      </div>
+
+      <nav class="ft-nav" aria-label="Footernavigation">
+        <ul>
+          <li>
+            <a href="/index.html#team">
+              <span>Unser Team</span>
+              <span class="ft-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/index.html#kontakt">
+              <span>Kontakt &amp; Anfahrt</span>
+              <span class="ft-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/therapie-erwachsene/">
+              <span>Für Erwachsene</span>
+              <span class="ft-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/therapie-kinder-und-jugendliche/">
+              <span>Für Kinder &amp; Jugendliche</span>
+              <span class="ft-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="ft-bottom">
+      <p class="ft-copyright">
+        © 2026 Sprachsch[Dil]. Alle Rechte vorbehalten.
+      </p>
+
+      <nav class="ft-legal" aria-label="Rechtliche Informationen">
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/impressum/">Impressum</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+  <!-- ==============================
+       GALERIA PRAXIS
+  ============================== -->
+
+  <dialog class="praxis-dialog" aria-labelledby="praxis-title">
+    <div class="praxis-dialog-head">
+      <h2 id="praxis-title">Unsere Praxis</h2>
+
+      <button
+        class="praxis-close"
+        type="button"
+        aria-label="Galerie schließen"
+      >
+        <svg class="icon" aria-hidden="true">
+          <use href="#close"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="praxis-photos">
+      <img
+        src="../photos/1.jpg"
+        alt="Eva Katharina Weber und Lena Pasqualini in ihrer Praxis"
+      >
+
+      <img
+        src="../photos/2.jpg"
+        alt="Der Eingangsbereich der Praxis"
+      >
+
+      <img
+        src="../photos/3.jpg"
+        alt="Einblick in die Behandlungsräume"
+      >
+    </div>
+
+    <p class="praxis-caption">
+      Sprachsch[Dil] · Schlosserstraße 5 · 70180 Stuttgart
+    </p>
+  </dialog>
+
+  <!-- ==============================
+       MENU I GALERIA
+  ============================== -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const mobile = matchMedia("(max-width: 1023px)");
+
+      const finePointer = matchMedia(
+        "(hover: hover) and (pointer: fine)"
+      );
+
+      const nav = document.querySelector(".nav-bar");
+      const opener = document.querySelector(".mobile-toggle");
+      const backdrop = document.querySelector(".menu-backdrop");
+      const praxisDialog = document.querySelector(".praxis-dialog");
+      const header = document.querySelector(".site-header");
+
+      if (!nav || !opener || !backdrop || !praxisDialog || !header) {
+        return;
+      }
+
+      const pageParts = [
+        document.querySelector(".logo-link"),
+        opener,
+        document.querySelector(".contact-strip"),
+        document.querySelector("main"),
+        document.querySelector(".site-footer"),
+        document.querySelector(".skip-link")
+      ].filter(Boolean);
+
+      const dropdowns = [
+        ...document.querySelectorAll(".has-submenu")
+      ];
+
+      const hoverTimers = new Map();
+
+      let drawerOpen = false;
+      let praxisTrigger = null;
+
+      function closeDropdown(item) {
+        clearTimeout(hoverTimers.get(item));
+
+        item.querySelectorAll("[aria-controls]").forEach((button) => {
+          button.setAttribute("aria-expanded", "false");
+        });
+
+        item.querySelector(".submenu").hidden = true;
+      }
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach((item) => {
+          if (item !== except) closeDropdown(item);
+        });
+      }
+
+      function openDropdown(item) {
+        closeAllDropdowns(item);
+        clearTimeout(hoverTimers.get(item));
+
+        item.querySelector(".submenu").hidden = false;
+
+        item.querySelectorAll("[aria-controls]").forEach((button) => {
+          button.setAttribute("aria-expanded", "true");
+        });
+      }
+
+      dropdowns.forEach((item) => {
+        const toggle = item.querySelector(".submenu-toggle");
+
+        item.querySelectorAll("[aria-controls]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const open =
+              toggle.getAttribute("aria-expanded") === "true";
+
+            open ? closeDropdown(item) : openDropdown(item);
+          });
+        });
+
+        item.addEventListener("pointerenter", () => {
+          if (!mobile.matches && finePointer.matches) {
+            openDropdown(item);
+          }
+        });
+
+        item.addEventListener("pointerleave", () => {
+          if (!mobile.matches && finePointer.matches) {
+            hoverTimers.set(
+              item,
+              setTimeout(() => {
+                if (!item.contains(document.activeElement)) {
+                  closeDropdown(item);
+                }
+              }, 180)
+            );
+          }
+        });
+
+        item.addEventListener("focusout", (event) => {
+          if (
+            !mobile.matches &&
+            !item.contains(event.relatedTarget)
+          ) {
+            closeDropdown(item);
+          }
+        });
+
+        toggle.addEventListener("keydown", (event) => {
+          if (event.key !== "ArrowDown") return;
+
+          event.preventDefault();
+          openDropdown(item);
+          item.querySelector(".submenu a").focus();
+        });
+      });
+
+      function setDrawer(open, restoreFocus = true) {
+        drawerOpen = open && mobile.matches;
+
+        nav.classList.toggle("is-open", drawerOpen);
+        backdrop.classList.toggle("is-open", drawerOpen);
+
+        opener.setAttribute("aria-expanded", String(drawerOpen));
+
+        opener.setAttribute(
+          "aria-label",
+          drawerOpen
+            ? "Hauptmenü schließen"
+            : "Hauptmenü öffnen"
+        );
+
+        document.body.classList.toggle("menu-open", drawerOpen);
+
+        pageParts.forEach((part) => {
+          part.inert = drawerOpen;
+        });
+
+        nav.inert = mobile.matches && !drawerOpen;
+
+        if (mobile.matches) {
+          nav.setAttribute("aria-hidden", String(!drawerOpen));
+        } else {
+          nav.removeAttribute("aria-hidden");
+        }
+
+        if (drawerOpen) {
+          requestAnimationFrame(() => {
+            if (drawerOpen) {
+              nav.querySelector(".drawer-close").focus();
+            }
+          });
+        } else {
+          closeAllDropdowns();
+
+          if (restoreFocus && mobile.matches) {
+            opener.focus();
+          }
+        }
+      }
+
+      opener.addEventListener("click", () => {
+        setDrawer(!drawerOpen);
+      });
+
+      nav.querySelector(".drawer-close").addEventListener(
+        "click",
+        () => setDrawer(false)
+      );
+
+      backdrop.addEventListener("click", () => {
+        setDrawer(false);
+      });
+
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (drawerOpen) {
+            setDrawer(false, false);
+          } else {
+            closeAllDropdowns();
+          }
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".has-submenu")) {
+          closeAllDropdowns();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (praxisDialog.open) return;
+
+        if (event.key === "Escape") {
+          const item = document.activeElement.closest(
+            ".has-submenu"
+          );
+
+          if (
+            item &&
+            item.querySelector(".submenu-toggle")
+              .getAttribute("aria-expanded") === "true"
+          ) {
+            event.preventDefault();
+            closeDropdown(item);
+            item.querySelector(".submenu-toggle").focus();
+            return;
+          }
+
+          if (drawerOpen) {
+            event.preventDefault();
+            setDrawer(false);
+          } else {
+            closeAllDropdowns();
+          }
+        }
+
+        if (event.key === "Tab" && drawerOpen) {
+          const focusable = [
+            ...nav.querySelectorAll("a[href], button")
+          ].filter((element) => {
+            return element.getClientRects().length > 0;
+          });
+
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+
+          if (
+            event.shiftKey &&
+            document.activeElement === first
+          ) {
+            event.preventDefault();
+            last.focus();
+          } else if (
+            !event.shiftKey &&
+            document.activeElement === last
+          ) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
+
+      function syncHeaderHeight() {
+        document.documentElement.style.setProperty(
+          "--header-height",
+          Math.ceil(header.getBoundingClientRect().height) + "px"
+        );
+      }
+
+      mobile.addEventListener("change", () => {
+        setDrawer(false, false);
+        syncHeaderHeight();
+      });
+
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(syncHeaderHeight).observe(header);
+      }
+
+      window.addEventListener("resize", syncHeaderHeight);
+
+      if (document.fonts) {
+        document.fonts.ready.then(syncHeaderHeight);
+      }
+
+      setDrawer(false, false);
+      syncHeaderHeight();
+
+      /* AKTYWNA PODSTRONA */
+
+      function normalizedPath(path) {
+        return path
+          .replace(/\/index\.html$/, "/")
+          .replace(/\/$/, "") || "/";
+      }
+
+      const currentPath = normalizedPath(location.pathname);
+
+      nav.querySelectorAll("a.menu-link").forEach((link) => {
+        const target = new URL(
+          link.getAttribute("href"),
+          location.href
+        );
+
+        if (
+          !target.hash &&
+          target.origin === location.origin &&
+          normalizedPath(target.pathname) === currentPath
+        ) {
+          link.setAttribute("aria-current", "page");
+        }
+      });
+
+      /* GALERIA */
+
+      document.querySelectorAll("[data-open-praxis]").forEach(
+        (button) => {
+          button.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            praxisTrigger = button;
+            praxisDialog.showModal();
+            document.body.classList.add("gallery-open");
+          });
+        }
+      );
+
+      praxisDialog.querySelector(".praxis-close").addEventListener(
+        "click",
+        () => praxisDialog.close()
+      );
+
+      praxisDialog.addEventListener("click", (event) => {
+        if (event.target !== praxisDialog) return;
+
+        const bounds = praxisDialog.getBoundingClientRect();
+
+        if (
+          event.clientX < bounds.left ||
+          event.clientX > bounds.right ||
+          event.clientY < bounds.top ||
+          event.clientY > bounds.bottom
+        ) {
+          praxisDialog.close();
+        }
+      });
+
+      praxisDialog.addEventListener("close", () => {
+        document.body.classList.remove("gallery-open");
+
+        if (!praxisTrigger) return;
+
+        if (
+          mobile.matches &&
+          praxisTrigger.closest(".nav-bar")
+        ) {
+          opener.focus();
+        } else {
+          praxisTrigger.focus();
+        }
+      });
+    })();
+  </script>
+
+  <!-- ==============================
+       FILM — PLAY / PAUSE
+  ============================== -->
+
+  <script>
+    (() => {
+      const hero = document.querySelector(".kids-hero");
+      if (!hero) return;
+
+      const video = hero.querySelector(".kh-video");
+      const button = hero.querySelector(".kh-video-toggle");
+
+      const reducedMotion = matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      function updateButton() {
+        const paused = video.paused;
+
+        button.classList.toggle("is-paused", paused);
+
+        button.setAttribute(
+          "aria-label",
+          paused
+            ? "Hintergrundvideo abspielen"
+            : "Hintergrundvideo pausieren"
+        );
+      }
+
+      button.hidden = false;
+
+      video.addEventListener("play", updateButton);
+      video.addEventListener("pause", updateButton);
+
+      video.addEventListener("error", () => {
+        button.hidden = true;
+      });
+
+      button.addEventListener("click", () => {
+        if (video.paused) {
+          video.play().catch(updateButton);
+        } else {
+          video.pause();
+        }
+      });
+
+      reducedMotion.addEventListener("change", (event) => {
+        if (event.matches) video.pause();
+      });
+
+      if (reducedMotion.matches) {
+        video.pause();
+      } else {
+        video.play().catch(updateButton);
+      }
+
+      updateButton();
+    })();
+  </script>
+
+  <!-- ==============================
+       ANIMACJE TERAPII
+  ============================== -->
+
+  <script>
+    (() => {
+      function initKidsTherapies() {
+        const section = document.querySelector(".kids-therapies");
+
+        if (!section || section.dataset.ktReady === "true") return;
+
+        const rows = [
+          ...section.querySelectorAll(".kt-item")
+        ];
+
+        const reducedMotion = matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        );
+
+        if (
+          !rows.length ||
+          !("IntersectionObserver" in window) ||
+          reducedMotion.matches
+        ) {
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.1
+          }
+        );
+
+        section.dataset.ktReady = "true";
+        section.classList.add("kt-ready");
+
+        rows.forEach((row) => observer.observe(row));
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener(
+          "DOMContentLoaded",
+          initKidsTherapies,
+          { once: true }
+        );
+      } else {
+        initKidsTherapies();
+      }
+    })();
+  </script>
+
+  <!-- ==============================
+       PRZEWIJANIE DO SEKCJI
+  ============================== -->
+
+  <script>
+    (() => {
+      const mobile = matchMedia("(max-width: 1023px)");
+
+      const reducedMotion = matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      function normalizedPath(path) {
+        return path
+          .replace(/\/index\.html$/, "/")
+          .replace(/\/$/, "") || "/";
+      }
+
+      function getTarget(hash) {
+        try {
+          const target = document.getElementById(
+            decodeURIComponent(hash.slice(1))
+          );
+
+          return target && target.classList.contains("kt-item")
+            ? target
+            : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function scrollToTarget(target, smooth) {
+        const header = document.querySelector(".site-header");
+
+        const offset = mobile.matches
+          ? 20
+          : header.getBoundingClientRect().height + 16;
+
+        const top =
+          window.scrollY +
+          target.getBoundingClientRect().top -
+          offset;
+
+        window.scrollTo({
+          top: Math.max(0, top),
+          behavior:
+            smooth && !reducedMotion.matches
+              ? "smooth"
+              : "instant"
+        });
+      }
+
+      document.addEventListener("click", (event) => {
+        if (
+          event.defaultPrevented ||
+          event.button !== 0 ||
+          event.ctrlKey ||
+          event.metaKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        const link = event.target.closest("a[href]");
+
+        if (
+          !link ||
+          link.hasAttribute("download") ||
+          (link.target && link.target !== "_self")
+        ) {
+          return;
+        }
+
+        const url = new URL(
+          link.getAttribute("href"),
+          location.href
+        );
+
+        if (
+          url.origin !== location.origin ||
+          normalizedPath(url.pathname) !==
+            normalizedPath(location.pathname)
+        ) {
+          return;
+        }
+
+        const target = getTarget(url.hash);
+        if (!target) return;
+
+        event.preventDefault();
+
+        if (location.hash !== url.hash) {
+          history.pushState(null, "", url.hash);
+        }
+
+        scrollToTarget(target, true);
+      });
+
+      window.addEventListener("hashchange", () => {
+        const target = getTarget(location.hash);
+
+        if (target) {
+          scrollToTarget(target, true);
+        }
+      });
+
+      function alignInitialHash() {
+        const initialHash = location.hash;
+
+        function align() {
+          if (location.hash !== initialHash) return;
+
+          const target = getTarget(initialHash);
+
+          if (target) {
+            scrollToTarget(target, false);
+          }
+        }
+
+        if (document.fonts) {
+          document.fonts.ready.then(align);
+        } else {
+          align();
+        }
+      }
+
+      if (document.readyState === "complete") {
+        alignInitialHash();
+      } else {
+        window.addEventListener(
+          "load",
+          alignInitialHash,
+          { once: true }
+        );
+      }
+    })();
+  </script>
+
+<!-- POWRÓT NA GÓRĘ -->
+
+<button
+  class="back-to-top"
+  type="button"
+  aria-label="Zurück nach oben"
+  hidden
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<script>
+  (() => {
+    function initBackToTop() {
+      const button = document.querySelector(".back-to-top");
+
+      if (!button) return;
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      function updateVisibility() {
+        button.hidden =
+          window.scrollY < 400 &&
+          document.activeElement !== button;
+      }
+
+      button.addEventListener("click", () => {
+        const focusTarget =
+          document.querySelector(".site-header .logo-link") ||
+          document.querySelector(".skip-link");
+
+        if (focusTarget) {
+          focusTarget.focus({ preventScroll: true });
+        }
+
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: reducedMotion.matches ? "instant" : "smooth"
+        });
+      });
+
+      window.addEventListener("scroll", updateVisibility, {
+        passive: true
+      });
+
+      window.addEventListener("pageshow", updateVisibility);
+      button.addEventListener("blur", updateVisibility);
+
+      updateVisibility();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener(
+        "DOMContentLoaded",
+        initBackToTop,
+        { once: true }
+      );
+    } else {
+      initBackToTop();
+    }
+  })();
+</script>
+</body>
+</html>

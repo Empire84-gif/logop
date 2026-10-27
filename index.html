@@ -1,0 +1,8120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sprachsch[Dil] – Praxis für Logopädie in Stuttgart</title>
+ <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+>
+  <meta
+    name="description"
+    content="Logopädie für Kinder, Jugendliche und Erwachsene in Stuttgart. Willkommen in der Praxisgemeinschaft Sprachsch[Dil]."
+  >
+
+  <meta name="theme-color" content="#592618">
+
+  <link rel="icon" href="../photos/favicon.png" type="image/png">
+
+  <link
+    rel="preload"
+    href="../fonts/Outfit-Regular.ttf"
+    as="font"
+    type="font/ttf"
+    crossorigin
+  >
+
+  <link
+    rel="preload"
+    href="../photos/1.jpg"
+    as="image"
+    fetchpriority="high"
+  >
+
+ <style>
+  /* ==============================
+   FONTY
+============================== */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==============================
+   USTAWIENIA I STYLE GLOBALNE
+============================== */
+
+:root {
+  --brown: #592618;
+  --brown-dark: #3d241d;
+  --green: #b5ce4a;
+  --green-light: #dae9a9;
+  --ink: #352d28;
+  --cream: #f8f9f3;
+  --line: #e4e7dc;
+  --header-height: 125px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: white;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-open,
+body.gallery-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 5px;
+}
+
+.container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.icon {
+  display: block;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  z-index: 200;
+  padding: 10px 20px;
+  color: white;
+  background: var(--brown);
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* ==============================
+   NAGŁÓWEK I NAWIGACJA
+============================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: white;
+  box-shadow: 0 3px 18px #392a1808;
+}
+
+.header-main {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  align-items: center;
+  gap: 30px;
+  min-height: 100px;
+  padding-block: 14px;
+}
+
+.logo-link {
+  display: block;
+}
+
+.logo-link img {
+  width: 230px;
+  height: 82px;
+  object-fit: contain;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 13px;
+  min-width: 0;
+}
+
+.primary-menu,
+.submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.primary-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-row {
+  display: flex;
+  align-items: center;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.menu-link:hover {
+  color: var(--brown);
+}
+
+.menu-link[aria-current="page"] {
+  color: #66752c;
+}
+
+.menu-parent-button {
+  border: 0;
+  background: transparent;
+}
+
+.submenu-toggle {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 35px;
+  margin-left: 3px;
+  padding: 0;
+  border: 0;
+  color: var(--brown);
+  background: transparent;
+}
+
+.submenu-toggle .icon {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s;
+}
+
+.submenu-toggle[aria-expanded="true"] .icon {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: -15px;
+  min-width: 265px;
+  max-width: 335px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--green);
+  border-radius: 0 0 0px 0px;
+  background: white;
+  box-shadow: 0 16px 35px #37291d20;
+}
+
+.submenu[hidden] {
+  display: none;
+}
+
+.submenu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.5;
+  transition: color 0.2s, background 0.2s;
+}
+
+.submenu a:hover {
+  color: var(--brown);
+  background: var(--cream);
+}
+
+.submenu-label {
+  padding: 7px 12px 10px;
+  color: #66752c;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ==============================
+   PRZYCISKI KONTAKTOWE
+============================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+  min-height: 54px;
+  padding: 8px 9px 8px 23px;
+  border: 0;
+  border-radius: 999px;
+  color: #303b11;
+  background: var(--green);
+  box-shadow: 0 6px 24px #151b0812;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.button .icon {
+  width: 36px;
+  height: 36px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #ffffff55;
+  stroke-width: 1.8;
+}
+
+.button:hover {
+  background: #c9df71;
+  box-shadow: 0 10px 26px #151b0820;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   DANE KONTAKTOWE
+============================== */
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.contact-row > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.contact-row > span + span {
+  padding-left: 12px;
+  border-left: 1px solid #dfe3d2;
+}
+
+.contact-row strong {
+  color: var(--brown);
+  font-weight: 600;
+}
+
+.contact-row a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hours-mobile {
+  display: none;
+}
+
+.mobile-toggle,
+.drawer-head,
+.drawer-footer,
+.menu-backdrop {
+  display: none;
+}
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100svh - var(--header-height));
+  color: white;
+  background: #625e4e;
+}
+
+.hero-slides,
+.hero-slide,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slides {
+  z-index: -3;
+}
+
+.hero-slide {
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 38%;
+}
+
+.hero-slide:first-child img {
+  width: 114%;
+  max-width: none;
+}
+
+.hero-slide:nth-child(2) img {
+  object-position: 55% 48%;
+}
+
+.hero-slide:nth-child(3) img {
+  object-position: 65% 50%;
+}
+
+.hero-overlay {
+  z-index: -2;
+  background:
+    linear-gradient(
+      90deg,
+      #22231ad9 0%,
+      #22231a99 42%,
+      #22231a19 100%
+    ),
+    linear-gradient(
+      0deg,
+      #22231a55,
+      transparent 50%
+    );
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(70px, 12vh, 125px);
+  padding-bottom: 40px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 21px;
+  color: #e3edbf;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 25px;
+  height: 2px;
+  background: var(--green);
+  content: "";
+}
+
+h1 {
+  max-width: 650px;
+  margin: 0;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: clamp(40px, 4vw, 56px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -1.4px;
+}
+
+h1 span {
+  display: block;
+  margin-top: 5px;
+  color: var(--green-light);
+}
+
+.hero-description {
+  max-width: 550px;
+  margin: 21px 0 0;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-intro {
+  max-width: 550px;
+  margin: 12px 0 0;
+  color: #eaece2;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.hero-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 54px;
+  padding: 14px 21px;
+  border: 1px solid #ffffff60;
+  border-radius: 999px;
+  color: white;
+  background: #ffffff0c;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.hero-more .icon {
+  width: 17px;
+  height: 17px;
+}
+
+.hero-more:hover {
+  border-color: #ffffff90;
+  background: #ffffff1c;
+}
+
+/* ==============================
+   STEROWANIE SLAJDAMI
+============================== */
+
+.hero-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 64px;
+  padding-bottom: 23px;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.slide-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  color: #d5d9ca;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 11px;
+}
+
+.slide-counter .current {
+  color: white;
+  font-size: 16px;
+}
+
+.slide-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.slide-dot {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.slide-dot::before {
+  width: 15px;
+  height: 4px;
+  border-radius: 3px;
+  background: #ffffff60;
+  content: "";
+}
+
+.slide-dot[aria-pressed="true"]::before {
+  width: 27px;
+  background: var(--green);
+}
+
+.hero-divider {
+  width: 1px;
+  height: 23px;
+  background: #ffffff40;
+}
+
+.round-control {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  padding: 0;
+  border: 1px solid #ffffff45;
+  border-radius: 50%;
+  color: white;
+  background: #ffffff12;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.round-control:hover {
+  background: #ffffff22;
+  transform: translateY(-1px);
+}
+
+.round-control .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.play-icon {
+  display: none;
+}
+
+.is-paused .pause-icon {
+  display: none;
+}
+
+.is-paused .play-icon {
+  display: block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ==============================
+   GALERIA PRAXIS
+============================== */
+
+.praxis-dialog {
+  width: min(1100px, calc(100% - 36px));
+  max-height: 90svh;
+  padding: 0;
+  overflow: auto;
+  border: 0;
+  border-radius: 15px;
+  color: var(--ink);
+  background: #fafbf6;
+  box-shadow: 0 30px 100px #0005;
+}
+
+.praxis-dialog::backdrop {
+  background: #182014d9;
+  backdrop-filter: blur(6px);
+}
+
+.praxis-dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.praxis-dialog h2 {
+  margin: 0;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.praxis-close {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #dce4ce;
+  border-radius: 50%;
+  color: var(--brown);
+  background: #eef3e1;
+}
+
+.praxis-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 25px;
+}
+
+.praxis-photos img {
+  width: 100%;
+  height: 260px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.praxis-photos img:first-child {
+  grid-column: 1 / -1;
+  height: 370px;
+  object-position: 50% 32%;
+}
+
+.praxis-caption {
+  margin: 0;
+  padding: 0 28px 24px;
+  color: #655f56;
+  font-size: 13px;
+}
+
+/* ==============================
+   TRZY KAFLE POD HERO
+============================== */
+
+.praxis-info {
+  padding: 86px 0 90px;
+  background: #f8f9f3;
+  color: #352d28;
+  font-family: "Roboto", Arial, sans-serif;
+  scroll-margin-top: 145px;
+}
+
+.pi-container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.pi-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 65px;
+  margin-bottom: 39px;
+}
+
+.pi-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 17px;
+  color: #66752c;
+  font: 400 11px/1.5 "Outfit", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.pi-eyebrow::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #b5ce4a;
+}
+
+.pi-intro h2 {
+  max-width: 530px;
+  margin: 0;
+  color: #592618;
+  font: 400 clamp(30px, 3vw, 42px)/1.16 "Outfit", Arial, sans-serif;
+  letter-spacing: -1px;
+}
+
+.pi-description {
+  max-width: 510px;
+  margin: 0 0 3px;
+  color: #6c6b60;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.pi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.pi-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  min-height: 420px;
+  border-radius: 12px;
+  background: #3d3f2a;
+  color: white;
+  scroll-margin-top: 145px;
+}
+
+.pi-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% 23%;
+  transition: transform 0.65s ease;
+}
+
+.pi-card:nth-child(2) .pi-photo {
+  object-position: 23% 50%;
+}
+
+.pi-card::before {
+  content: "";
+  position: absolute;
+  inset: 50% 0 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.94) 0%,
+    rgba(0, 0, 0, 0.78) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.pi-card:hover .pi-photo {
+  transform: scale(1.04);
+}
+
+.pi-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 24px;
+}
+
+.pi-number {
+  display: block;
+  margin-bottom: 6px;
+  color: #deecac;
+  font: 400 10px/1.5 "Outfit", Arial, sans-serif;
+  letter-spacing: 1.6px;
+}
+
+.pi-card h3 {
+  margin: 0 0 8px;
+  color: white;
+  font: 400 27px/1.2 "Outfit", Arial, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.pi-card-text {
+  margin: 0 0 14px;
+  color: #f1f3e9;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.pi-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+  min-height: 48px;
+  padding: 7px 8px 7px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #b5ce4a;
+  color: #303b11;
+  font: 500 14px/1.4 "Roboto", Arial, sans-serif;
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.pi-action:hover {
+  background: #c9df71;
+  transform: translateY(-2px);
+}
+
+.pi-action:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 5px;
+}
+
+.pi-mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff55;
+  font: 400 23px/1 Arial, sans-serif;
+  transition: transform 0.2s;
+}
+
+.pi-mark svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==============================
+   CZTERY LICZNIKI
+============================== */
+
+.praxis-metrics {
+  padding: 58px 0 64px;
+  color: #592618;
+  background: #e5edce;
+}
+
+.pm-container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.pm-heading {
+  margin-bottom: 42px;
+  text-align: center;
+}
+
+.pm-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: #59663a;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.pm-eyebrow::before,
+.pm-eyebrow::after {
+  content: "";
+  width: 23px;
+  height: 1px;
+  background: #829644;
+}
+
+.pm-heading h2 {
+  margin: 0;
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: clamp(29px, 2.8vw, 39px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.9px;
+  text-wrap: balance;
+}
+
+.pm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pm-stat {
+  min-width: 0;
+  padding: 0 20px;
+  border-left: 1px solid rgba(89, 38, 24, 0.17);
+  text-align: center;
+}
+
+.pm-stat:first-child {
+  border-left: 0;
+}
+
+.pm-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 0 0 16px;
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: clamp(50px, 5.4vw, 80px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -3px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.pm-plus {
+  margin-left: 5px;
+  color: #788c39;
+  font-size: 0.42em;
+  line-height: 1;
+  letter-spacing: 0;
+  transform: translateY(-0.16em);
+}
+
+.pm-label {
+  max-width: 220px;
+  margin: 0 auto;
+  color: #4e4c3c;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.pm-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+/* ==============================
+   NASZE TERAPIE
+============================== */
+
+.therapy-section {
+  padding: 80px 0 86px;
+  background: #fff;
+  color: #352d28;
+}
+
+.th-container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.th-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 60px;
+  margin-bottom: 35px;
+}
+
+.th-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: #66752c;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.th-eyebrow::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #b5ce4a;
+}
+
+.th-heading h2 {
+  margin: 0;
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: clamp(32px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -1px;
+}
+
+.th-description {
+  max-width: 510px;
+  margin: 0 0 3px;
+  color: #6c6b60;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.th-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.th-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #292520;
+  color: #fff;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.th-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+  transition: transform 0.9s ease;
+}
+
+.th-card::before {
+  content: "";
+  position: absolute;
+  inset: 60% 0 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.94) 0%,
+    rgba(0, 0, 0, 0.78) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.th-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 32px;
+}
+
+.th-content h3 {
+  max-width: 440px;
+  margin: 0;
+  color: #fff;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: clamp(28px, 2.7vw, 36px);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -0.7px;
+  text-wrap: balance;
+}
+
+.th-card:nth-child(2) .th-content h3 {
+  max-width: none;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  font-size: clamp(20px, 2.1vw, 30px);
+}
+
+.th-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 48px;
+  padding: 7px 8px 7px 20px;
+  border-radius: 999px;
+  background: #f5d45a;
+  color: #592618;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: background 0.25s ease;
+}
+
+.th-button-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.th-button-icon svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s ease;
+}
+
+.th-card:focus-visible {
+  outline: 3px solid #829644;
+  outline-offset: 6px;
+}
+
+.th-card:focus-visible .th-photo {
+  transform: scale(1.035);
+}
+
+.th-card:focus-visible .th-button {
+  background: #ffe58a;
+}
+
+/* ==============================
+   DESKTOP — OD 1024 PX
+============================== */
+
+@media (min-width: 1024px) {
+  .menu-contact {
+    min-height: 42px;
+    padding: 5px 7px 5px 18px;
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .menu-contact .icon {
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+  }
+
+  .hero-content {
+    transform: translateY(30px);
+  }
+
+  .th-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .th-content h3 {
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    font-size: 30px;
+    white-space: nowrap;
+    text-wrap: nowrap;
+  }
+
+  .th-card:nth-child(2) .th-content h3 {
+    font-size: 26px;
+  }
+
+  .th-button {
+    flex: 0 0 auto;
+  }
+}
+
+/* ==============================
+   MNIEJSZY DESKTOP — 1024–1180 PX
+============================== */
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .header-main {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 20px;
+    min-height: 112px;
+  }
+
+  .logo-link img {
+    width: 180px;
+    height: 68px;
+  }
+
+  .primary-menu {
+    gap: 12px;
+  }
+
+  .menu-link {
+    font-size: 13px;
+  }
+
+  .contact-row {
+    gap: 9px;
+    font-size: 10.5px;
+  }
+
+  .contact-row > span + span {
+    padding-left: 9px;
+  }
+
+  .pi-container {
+    width: calc(100% - 40px);
+  }
+
+  .pi-content {
+    padding: 25px;
+  }
+
+  .pi-card h3 {
+    font-size: 25px;
+  }
+
+  .pi-action {
+    gap: 9px;
+    padding-left: 14px;
+    font-size: 13px;
+  }
+
+  .pm-container {
+    width: calc(100% - 40px);
+  }
+
+  .pm-stat {
+    padding-inline: 16px;
+  }
+
+  .pm-label {
+    font-size: 13px;
+  }
+
+  .th-container {
+    width: calc(100% - 40px);
+  }
+
+  .th-heading {
+    gap: 35px;
+  }
+
+  .th-content {
+    padding: 28px;
+  }
+}
+
+/* ==============================
+   GŁÓWNY BREAKPOINT
+   MOBILE I TABLET — DO 1023 PX
+============================== */
+
+@media (max-width: 1023px) {
+  html {
+    scroll-padding-top: 20px;
+  }
+
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .site-header {
+    position: relative;
+  }
+
+  .header-main {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 20px;
+    min-height: 0;
+    padding-top: 12px;
+    padding-bottom: 0;
+  }
+
+  .logo-link img {
+    width: 230px;
+    height: 76px;
+  }
+
+  .header-content {
+    display: contents;
+  }
+
+  .contact-strip {
+    grid-column: 1 / -1;
+    margin-top: 12px;
+    margin-inline: -20px;
+    padding-inline: 20px;
+    border-top: 1px solid var(--line);
+    background: var(--cream);
+  }
+
+  .contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: start;
+    gap: 12px 24px;
+    padding-block: 19px;
+    font-size: 13px;
+    white-space: normal;
+  }
+
+  .contact-row > span {
+    align-items: flex-start;
+    gap: 5px;
+    line-height: 1.65;
+  }
+
+  .contact-row > span + span {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .contact-row a {
+    overflow-wrap: anywhere;
+  }
+
+  .hours-line {
+    flex-wrap: wrap;
+  }
+
+  .hours-line strong {
+    flex-basis: 100%;
+  }
+
+  .hours-desktop {
+    display: none;
+  }
+
+  .hours-mobile {
+    display: block;
+    line-height: 1.8;
+  }
+
+  /* Burger */
+
+  .mobile-toggle {
+    display: grid;
+    place-items: center;
+    justify-self: end;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid #dee4d0;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 3px 12px #35401708;
+  }
+
+  .mobile-toggle:hover {
+    background: #eef3df;
+  }
+
+  .burger-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    width: 22px;
+  }
+
+  .burger-lines i {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--brown);
+  }
+
+  .burger-lines i:last-child {
+    width: 15px;
+  }
+
+  /* Menu boczne */
+
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    width: min(430px, calc(100% - 24px));
+    padding: 0 25px max(30px, env(safe-area-inset-bottom));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: white;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform 0.25s, visibility 0.25s;
+  }
+
+  .nav-bar.is-open {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 105px;
+    margin-bottom: 19px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .drawer-logo {
+    width: 205px;
+    height: 79px;
+    object-fit: contain;
+  }
+
+  .drawer-close {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid #e0e6d2;
+    border-radius: 50%;
+    color: var(--brown);
+    background: #f1f4e7;
+  }
+
+  .primary-menu {
+    display: block;
+  }
+
+  .menu-item {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .menu-row {
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .menu-link {
+    flex: 1;
+    min-height: 55px;
+    padding-block: 12px;
+    font-size: 15px;
+    white-space: normal;
+  }
+
+  .menu-contact {
+    margin-block: 15px;
+  }
+
+  .submenu-toggle {
+    width: 42px;
+    height: 42px;
+    margin: 6px -6px 6px 0;
+  }
+
+  .submenu-toggle .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .submenu {
+    position: static;
+    min-width: 0;
+    max-width: none;
+    padding: 0 0 15px 12px;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .submenu a {
+    border-left: 2px solid #e4eccd;
+    border-radius: 0;
+    font-size: 14px;
+  }
+
+  .submenu-label {
+    display: none;
+  }
+
+  .drawer-footer {
+    display: block;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+  }
+
+  .drawer-footer a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-block: 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .drawer-footer .icon {
+    color: #66752c;
+  }
+
+  .menu-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: block;
+    background: #24271d80;
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
+  }
+
+  .menu-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hero */
+
+  .hero-content {
+    padding-top: 55px;
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  .hero-description {
+    max-width: 510px;
+  }
+
+  /* Trzy kafle */
+
+  .praxis-info {
+    padding: 64px 0;
+    scroll-margin-top: 20px;
+  }
+
+  .pi-container {
+    width: calc(100% - 40px);
+  }
+
+  .pi-intro {
+    gap: 35px;
+  }
+
+  .pi-grid {
+    gap: 18px;
+  }
+
+  .pi-content {
+    padding: 22px;
+  }
+
+  .pi-card {
+    min-height: 410px;
+    scroll-margin-top: 20px;
+  }
+
+  .pi-card h3 {
+    font-size: 24px;
+  }
+
+  .pi-card-text {
+    font-size: 14px;
+  }
+
+  .pi-action {
+    gap: 8px;
+    padding-left: 14px;
+    font-size: 12px;
+  }
+
+  .pi-mark {
+    width: 29px;
+    height: 29px;
+  }
+
+  /* Liczniki */
+
+  .praxis-metrics {
+    padding: 48px 0 52px;
+  }
+
+  .pm-container {
+    width: calc(100% - 40px);
+  }
+
+  .pm-heading {
+    margin-bottom: 34px;
+  }
+
+  .pm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 38px;
+  }
+
+  .pm-stat {
+    padding-inline: 22px;
+  }
+
+  .pm-stat:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .pm-value {
+    font-size: 76px;
+  }
+
+  /* Terapie */
+
+  .therapy-section {
+    padding: 60px 0 64px;
+  }
+
+  .th-container {
+    width: calc(100% - 40px);
+  }
+
+  .th-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  .th-description {
+    max-width: 620px;
+  }
+
+  .th-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .th-card {
+    min-height: 420px;
+  }
+
+  .th-content h3 {
+    max-width: 520px;
+    font-size: 36px;
+  }
+}
+
+/* ==============================
+   DOPASOWANIE KAFLI — DO 760 PX
+============================== */
+
+@media (max-width: 760px) {
+  .praxis-info {
+    padding: 49px 0 54px;
+  }
+
+  .pi-intro {
+    grid-template-columns: 1fr;
+    gap: 21px;
+    margin-bottom: 29px;
+  }
+
+  .pi-intro h2 {
+    max-width: 450px;
+    font-size: 34px;
+  }
+
+  .pi-description {
+    max-width: 580px;
+    font-size: 14px;
+  }
+
+  .pi-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .pi-card {
+    min-height: 385px;
+  }
+
+  .pi-content {
+    padding: 24px;
+  }
+
+  .pi-card h3 {
+    font-size: 28px;
+  }
+
+  .pi-card-text {
+    max-width: 440px;
+    font-size: 15px;
+  }
+
+  .pi-action {
+    gap: 13px;
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  .pi-mark {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ==============================
+   DRUGI NAGŁÓWEK TERAPII — TABLET
+============================== */
+
+@media (min-width: 601px) and (max-width: 1023px) {
+  .th-card:nth-child(2) .th-content h3 {
+    font-size: clamp(22px, 3.5vw, 36px);
+  }
+}
+
+/* ==============================
+   SMARTPHONE — DO 600 PX
+============================== */
+
+@media (max-width: 600px) {
+  .header-main {
+    padding-top: 9px;
+  }
+
+  .logo-link img {
+    width: 220px;
+    height: 73px;
+  }
+
+  .contact-strip {
+    margin-top: 8px;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-block: 16px 18px;
+  }
+
+  .contact-row > span {
+    gap: 6px;
+  }
+
+  .hours-line {
+    row-gap: 2px !important;
+    margin-top: 3px;
+    padding-top: 11px;
+    border-top: 1px solid #e0e5d6;
+  }
+
+  .hours-mobile {
+    font-size: 12px;
+  }
+
+  .drawer-head {
+    gap: 12px;
+    min-height: 100px;
+  }
+
+  .drawer-logo {
+    width: 190px;
+    height: 73px;
+  }
+
+  /* Hero */
+
+  .hero-content {
+    padding-top: 43px;
+    padding-bottom: 27px;
+  }
+
+  .eyebrow {
+    margin-bottom: 18px;
+    font-size: 9px;
+    letter-spacing: 1.7px;
+  }
+
+  h1 {
+    font-size: clamp(30px, 8.4vw, 39px);
+    line-height: 1.13;
+    letter-spacing: -0.6px;
+  }
+
+  .hero-description {
+    margin-top: 19px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero-intro {
+    margin-top: 11px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    gap: 15px;
+    margin-top: 24px;
+  }
+
+  .button {
+    gap: 13px;
+    min-height: 49px;
+    padding: 7px 7px 7px 18px;
+    font-size: 14px;
+  }
+
+  .button .icon {
+    width: 31px;
+    height: 31px;
+    padding: 8px;
+  }
+
+  .hero-more {
+    gap: 8px;
+    min-height: 42px;
+    padding: 7px 0;
+    border: 0;
+    border-bottom: 1px solid #ffffff75;
+    border-radius: 0;
+    background: transparent;
+    font-size: 13px;
+  }
+
+  .hero-more:hover {
+    background: transparent;
+  }
+
+  .hero-slide img {
+    object-position: 61% 34%;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        #25281bd9,
+        #25281b80
+      ),
+      linear-gradient(
+        0deg,
+        #1b21156b,
+        transparent 65%
+      );
+  }
+
+  .hero-bottom {
+    min-height: 58px;
+    padding-bottom: 20px;
+  }
+
+  .slider-controls {
+    gap: 11px;
+  }
+
+  .round-control {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Galeria */
+
+  .praxis-dialog-head {
+    padding: 19px;
+  }
+
+  .praxis-dialog h2 {
+    font-size: 23px;
+  }
+
+  .praxis-photos {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 17px;
+  }
+
+  .praxis-photos img,
+  .praxis-photos img:first-child {
+    grid-column: auto;
+    height: 230px;
+  }
+
+  .praxis-caption {
+    padding: 0 19px 20px;
+    font-size: 12px;
+  }
+
+  /* Liczniki */
+
+  .praxis-metrics {
+    padding: 39px 0 43px;
+  }
+
+  .pm-heading {
+    margin-bottom: 30px;
+  }
+
+  .pm-eyebrow {
+    margin-bottom: 12px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .pm-eyebrow::before,
+  .pm-eyebrow::after {
+    width: 18px;
+  }
+
+  .pm-heading h2 {
+    max-width: 350px;
+    margin-inline: auto;
+    font-size: 30px;
+    letter-spacing: -0.6px;
+  }
+
+  .pm-grid {
+    row-gap: 32px;
+  }
+
+  .pm-stat {
+    padding-inline: 10px;
+  }
+
+  .pm-value {
+    margin-bottom: 11px;
+    font-size: clamp(36px, 10vw, 54px);
+    letter-spacing: -1.7px;
+  }
+
+  .pm-plus {
+    margin-left: 3px;
+  }
+
+  .pm-label {
+    max-width: 160px;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* Terapie */
+
+  .therapy-section {
+    padding: 46px 0 50px;
+  }
+
+  .th-heading {
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+
+  .th-eyebrow {
+    margin-bottom: 13px;
+    font-size: 10px;
+    letter-spacing: 1.7px;
+  }
+
+  .th-heading h2 {
+    font-size: 34px;
+  }
+
+  .th-description {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .th-grid {
+    gap: 20px;
+  }
+
+  .th-card {
+    min-height: 380px;
+  }
+
+  .th-content {
+    gap: 17px;
+    padding: 25px;
+  }
+
+  .th-content h3 {
+    font-size: 35px;
+    letter-spacing: -0.5px;
+  }
+
+  .th-card:nth-child(2) .th-content h3 {
+    font-size: clamp(14px, 4.3vw, 24px);
+  }
+
+  .th-button {
+    min-height: 46px;
+    padding-left: 18px;
+    font-size: 13px;
+  }
+
+  .th-button-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ==============================
+   MAŁY SMARTPHONE — DO 360 PX
+============================== */
+
+@media (max-width: 360px) {
+  .logo-link img {
+    width: 190px;
+    height: 68px;
+  }
+
+  .contact-row {
+    font-size: 12px;
+  }
+
+  .drawer-logo {
+    width: 170px;
+    height: 65px;
+  }
+
+  .hero-actions {
+    gap: 14px;
+  }
+
+  .button {
+    gap: 10px;
+    padding-left: 16px;
+    font-size: 13px;
+  }
+
+  .hero-more {
+    font-size: 12px;
+  }
+
+  .slider-controls {
+    gap: 10px;
+  }
+
+  .slide-counter,
+  .hero-divider {
+    display: none;
+  }
+
+  .pi-content {
+    padding: 23px;
+  }
+
+  .pi-intro h2 {
+    font-size: 31px;
+  }
+
+  .pi-card h3 {
+    font-size: 25px;
+  }
+
+  .pi-action {
+    padding-left: 14px;
+    gap: 9px;
+    font-size: 13px;
+  }
+}
+
+/* ==============================
+   URZĄDZENIA Z KURSOREM
+============================== */
+
+@media (hover: hover) and (pointer: fine) {
+  .th-card:hover .th-photo {
+    transform: scale(1.035);
+  }
+
+  .th-card:hover .th-button {
+    background: #ffe58a;
+  }
+
+  .th-card:hover .th-button-icon svg {
+    transform: translate(2px, -2px);
+  }
+}
+
+/* ==============================
+   OGRANICZENIE RUCHU
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .therapy-section .th-photo,
+  .therapy-section .th-button-icon svg {
+    transform: none !important;
+  }
+}
+
+/* ==============================
+   KONTAKT
+============================== */
+
+.contact-section {
+  --ct-gap: clamp(28px, 4vw, 55px);
+  --ct-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+  padding: 52px 0 56px;
+  background: #f8f9f3;
+  color: #352d28;
+}
+
+.ct-container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* Nagłówek wyrównany do formularza */
+
+.ct-heading {
+  display: grid;
+  grid-template-columns: var(--ct-columns);
+  align-items: end;
+  gap: var(--ct-gap);
+  margin-bottom: 28px;
+}
+
+.ct-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: #66752c;
+  font: 400 11px/1.5 "Outfit", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ct-eyebrow::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #b5ce4a;
+}
+
+.ct-heading h2 {
+  margin: 0;
+  color: #592618;
+  font: 400 clamp(32px, 3vw, 42px)/1.16 "Outfit", Arial, sans-serif;
+  letter-spacing: -1px;
+  text-wrap: balance;
+}
+
+.ct-description {
+  max-width: 510px;
+  margin: 0;
+  color: #6c6b60;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Główny układ */
+
+.ct-layout {
+  display: grid;
+  grid-template-columns: var(--ct-columns);
+  align-items: start;
+  gap: 28px var(--ct-gap);
+}
+
+.ct-left {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+
+.ct-info,
+.ct-form,
+.ct-hours,
+.ct-directions,
+.ct-map-panel {
+  min-width: 0;
+}
+
+/* Dane kontaktowe */
+
+.ct-info h3 {
+  margin: 0 0 3px;
+  color: #592618;
+  font: 400 29px/1.2 "Outfit", Arial, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.ct-subtitle {
+  margin: 0 0 16px;
+  color: #6c6b60;
+  font-size: 14px;
+}
+
+.ct-address {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.ct-contacts {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+}
+
+.ct-contact-row {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+}
+
+.ct-contact-row dt {
+  color: #6c6b60;
+  font-size: 13px;
+}
+
+.ct-contact-row dd {
+  min-width: 0;
+  margin: 0;
+  color: #592618;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.ct-contact-row:first-child dd {
+  font: 400 23px/1.3 "Outfit", Arial, sans-serif;
+}
+
+.ct-contacts a:hover,
+.ct-route-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ct-info-note {
+  max-width: 440px;
+  margin: 18px 0 0;
+  color: #6c6b60;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* Godziny pod danymi kontaktowymi */
+
+.ct-hours {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ct-hours h3 {
+  margin: 0 0 8px;
+  color: #592618;
+  font: 400 22px/1.25 "Outfit", Arial, sans-serif;
+  letter-spacing: -0.3px;
+}
+
+.ct-hours table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ct-hours th,
+.ct-hours td {
+  padding: 7px 0;
+  border-bottom: 1px solid #e4e7dc;
+}
+
+.ct-hours th {
+  padding-right: 12px;
+  color: #6c6b60;
+  font-weight: 400;
+  text-align: left;
+}
+
+.ct-hours td {
+  color: #592618;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ct-hours tr:last-child th,
+.ct-hours tr:last-child td {
+  border-bottom: 0;
+}
+
+.ct-hours-note {
+  margin: 11px 0 0;
+  color: #6c6b60;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Formularz bez ramki */
+
+.ct-form {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ct-form h3 {
+  margin: 0 0 7px;
+  color: #592618;
+  font: 400 25px/1.25 "Outfit", Arial, sans-serif;
+  letter-spacing: -0.4px;
+}
+
+.ct-form-intro {
+  margin: 0 0 16px;
+  color: #6c6b60;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ct-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 16px;
+}
+
+.ct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.ct-field-wide {
+  grid-column: 1 / -1;
+}
+
+.ct-field label {
+  color: #4d443c;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ct-optional {
+  color: #77766c;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.ct-field input,
+.ct-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 9px 12px;
+  border: 1px solid #dfe3d7;
+  border-radius: 6px;
+  background: #fff;
+  color: #352d28;
+  font: 400 16px/1.5 "Roboto", Arial, sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ct-field textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+.ct-field input:focus,
+.ct-field textarea:focus {
+  outline: 0;
+  border-color: #829644;
+  box-shadow: 0 0 0 3px #b5ce4a26;
+}
+
+/* Obowiązkowa zgoda */
+
+.ct-consent {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.ct-consent input {
+  width: 17px;
+  height: 17px;
+  margin: 3px 0 0;
+  accent-color: #829644;
+  cursor: pointer;
+}
+
+.ct-consent input:focus-visible {
+  outline: 2px solid #829644;
+  outline-offset: 3px;
+}
+
+.ct-consent label {
+  color: #6c6b60;
+  font-size: 12px;
+  line-height: 1.65;
+  cursor: pointer;
+}
+
+.ct-consent a {
+  color: #592618;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Przycisk po lewej, Cloudflare po prawej */
+
+.ct-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.ct-actions .ct-security {
+  order: 1;
+  flex: 0 1 300px;
+  width: 300px;
+  min-width: 150px;
+  max-width: 300px;
+  margin: 0 0 0 auto;
+}
+
+#ct-turnstile {
+  width: 100%;
+  min-height: 65px;
+}
+
+.ct-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 48px;
+  padding: 7px 8px 7px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #f5d45a;
+  color: #592618;
+  font: 500 14px/1.4 "Roboto", Arial, sans-serif;
+  transition: background 0.2s;
+}
+
+.ct-actions .ct-submit {
+  order: 0;
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.ct-submit:hover {
+  background: #ffe58a;
+}
+
+.ct-submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.ct-submit-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ffffff66;
+}
+
+.ct-submit-icon svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ct-status {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ct-status:not(:empty) {
+  margin-top: 12px;
+}
+
+.ct-status[data-state="error"] {
+  color: #9b3428;
+}
+
+.ct-status[data-state="success"] {
+  color: #52652a;
+}
+
+/* Dojazd: tekst po lewej, mapa po prawej */
+
+.ct-bottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: var(--ct-columns);
+  align-items: start;
+  gap: var(--ct-gap);
+  padding-top: 26px;
+  border-top: 1px solid #dfe3d2;
+}
+
+.ct-directions h3 {
+  margin: 0 0 12px;
+  color: #592618;
+  font: 400 25px/1.25 "Outfit", Arial, sans-serif;
+  letter-spacing: -0.4px;
+}
+
+.ct-route-text {
+  max-width: 440px;
+  margin: 0 0 12px;
+  color: #6c6b60;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ct-route-text strong {
+  color: #4d443c;
+  font-weight: 500;
+}
+
+.ct-map {
+  overflow: hidden;
+  height: 250px;
+  border-radius: 10px;
+  background: #e5edce;
+}
+
+.ct-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.ct-route-link {
+  display: inline-block;
+  margin-top: 11px;
+  color: #592618;
+  font-size: 13px;
+}
+
+/* ==============================
+   MOBILE I TABLET — DO 1023 PX
+============================== */
+
+@media (max-width: 1023px) {
+  .contact-section {
+    padding: 46px 0 50px;
+  }
+
+  .ct-container {
+    width: calc(100% - 40px);
+  }
+
+  .ct-heading {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+
+  .ct-description {
+    max-width: 620px;
+  }
+
+  .ct-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /*
+    Rozdzielenie lewej kolumny pozwala zachować kolejność:
+    dane → formularz → dojazd i mapa → godziny.
+  */
+
+  .ct-left {
+    display: contents;
+  }
+
+  .ct-info {
+    order: 0;
+    width: 100%;
+  }
+
+  .ct-form {
+    order: 1;
+    width: 100%;
+  }
+
+  .ct-bottom {
+    order: 2;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 17px;
+    padding-top: 26px;
+  }
+
+  .ct-hours {
+    order: 3;
+    width: 100%;
+  }
+
+  .ct-info-note {
+    max-width: 620px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #dfe3d2;
+    line-height: 1.8;
+  }
+
+  .ct-subtitle {
+    margin-bottom: 20px;
+  }
+
+  .ct-address {
+    margin-bottom: 20px;
+  }
+
+  .ct-contacts {
+    gap: 12px;
+  }
+
+  .ct-fields {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ct-field input,
+  .ct-field textarea {
+    padding: 10px 12px;
+  }
+
+  .ct-field textarea {
+    min-height: 110px;
+  }
+
+  .ct-consent {
+    margin-top: 16px;
+  }
+
+  /* Dotychczasowy układ Cloudflare i przycisku */
+
+  .ct-actions {
+    display: block;
+    margin-top: 17px;
+  }
+
+  .ct-actions .ct-security {
+    width: 300px;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .ct-actions .ct-submit {
+    margin-top: 17px;
+  }
+
+  .ct-hours h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+
+  .ct-hours th,
+  .ct-hours td {
+    padding-block: 9px;
+  }
+
+  .ct-hours-note {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #dfe3d2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ct-actions {
+    margin-top: 30px;
+  }
+}
+
+/* ==============================
+   NASZ ZESPÓŁ
+============================== */
+
+.team-section {
+  padding: 50px 0 54px;
+  background: #f8e8ad;
+  color: #514a3c;
+  font-family: "Roboto", Arial, sans-serif;
+  scroll-margin-top: 16px;
+}
+
+.tm-container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* Wprowadzenie */
+
+.tm-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 36px;
+  margin-bottom: 32px;
+}
+
+.tm-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+  color: #705b36;
+  font: 400 10px/1.5 "Outfit", Arial, sans-serif;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.tm-eyebrow::before {
+  content: "";
+  width: 23px;
+  height: 2px;
+  background: #829644;
+}
+
+.tm-intro h2 {
+  margin: 0;
+  color: #592618;
+  font: 400 34px/1.18 "Outfit", Arial, sans-serif;
+  letter-spacing: -0.8px;
+  text-wrap: balance;
+}
+
+.tm-description {
+  max-width: 520px;
+  margin: 0;
+  color: #685b40;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* Profile */
+
+.tm-member {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  align-items: start;
+  gap: 36px;
+  scroll-margin-top: 16px;
+}
+
+.tm-member + .tm-member {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(89, 38, 24, 0.18);
+}
+
+/* Zdjęcia */
+
+.tm-portrait {
+  width: 100%;
+  max-width: 320px;
+  margin: 0;
+}
+
+.tm-photo-frame {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  background: #e5d39a;
+}
+
+.tm-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+}
+
+/* Nazwisko i kwalifikacje */
+
+.tm-content {
+  min-width: 0;
+}
+
+.tm-content h3 {
+  margin: 0;
+  color: #592618;
+  font: 400 32px/1.16 "Outfit", Arial, sans-serif;
+  letter-spacing: -0.7px;
+  text-wrap: balance;
+}
+
+.tm-qualification {
+  margin: 9px 0 17px;
+  color: #705b36;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+/* Opisy */
+
+.tm-body {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.tm-body p {
+  margin: 0 0 12px;
+}
+
+.tm-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Cytat */
+
+.tm-quote {
+  margin: 0 0 17px;
+  padding-left: 16px;
+  border-left: 2px solid rgba(89, 38, 24, 0.3);
+}
+
+.tm-quote p {
+  margin: 0;
+  color: #592618;
+  font: 400 20px/1.4 "Outfit", Arial, sans-serif;
+  letter-spacing: -0.2px;
+}
+
+.tm-quote cite {
+  display: block;
+  margin-top: 5px;
+  color: #776747;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+/* Cele terapii */
+
+.tm-goals {
+  display: grid;
+  gap: 5px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.tm-goals li,
+.tm-specialties-list li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.tm-goals li::before,
+.tm-specialties-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #829644;
+}
+
+/* Specjalizacje */
+
+.tm-specialties {
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(89, 38, 24, 0.18);
+}
+
+.tm-specialties h4 {
+  margin: 0 0 10px;
+  color: #592618;
+  font: 400 10px/1.5 "Outfit", Arial, sans-serif;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.tm-specialties-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* Lena: tekst po lewej, zdjęcie po prawej */
+
+.tm-member--reverse {
+  grid-template-columns: minmax(0, 1fr) 320px;
+}
+
+.tm-member--reverse .tm-portrait {
+  order: 2;
+}
+
+.tm-member--reverse .tm-content {
+  order: 1;
+}
+
+/* ==============================
+   MOBILE I TABLET — DO 1023 PX
+============================== */
+
+@media (max-width: 1023px) {
+  .team-section {
+    padding: 40px 0 44px;
+    scroll-margin-top: 0;
+  }
+
+  .tm-container {
+    width: calc(100% - 40px);
+  }
+
+  .tm-intro {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 27px;
+  }
+
+  .tm-intro h2 {
+    font-size: 31px;
+  }
+
+  .tm-description {
+    max-width: 640px;
+  }
+
+  .tm-member,
+  .tm-member--reverse {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    scroll-margin-top: 0;
+  }
+
+  .tm-member + .tm-member {
+    margin-top: 32px;
+    padding-top: 32px;
+  }
+
+  .tm-portrait,
+  .tm-member--reverse .tm-portrait {
+    order: initial;
+    justify-self: center;
+    max-width: 320px;
+  }
+
+  .tm-content,
+  .tm-member--reverse .tm-content {
+    display: block;
+    order: initial;
+  }
+
+  .tm-content h3 {
+    font-size: 29px;
+  }
+
+  .tm-qualification {
+    margin: 8px 0 16px;
+  }
+
+  .tm-specialties-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tm-specialties-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px 20px;
+    align-items: start;
+  }
+}
+
+/* Specjalizacje pod zdjęciem i opisem — pełna szerokość */
+
+.tm-member > .tm-specialties {
+  grid-column: 1 / -1;
+  order: 3;
+  margin-top: 0;
+}
+
+/* Desktop: trzy pozycje w rzędzie */
+
+@media (min-width: 1024px) {
+  .tm-member {
+    row-gap: 18px;
+  }
+
+  .tm-member > .tm-specialties .tm-specialties-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #eva-katharina-weber > .tm-specialties .tm-specialties-list {
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    gap: 10px 28px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .tm-container,
+  .ct-container {
+    width: calc(100% - 40px);
+  }
+}
+
+/* ==============================
+   OPINIE
+============================== */
+
+.reviews-section,
+.reviews-section * {
+  box-sizing: border-box;
+}
+
+.reviews-section {
+  padding: 52px 0 56px;
+  background: #ffffff;
+  color: #352d28;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.rv-container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* NAGŁÓWEK */
+
+.rv-heading {
+  max-width: 740px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.rv-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 16px;
+
+  color: #66752c;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.rv-eyebrow::before {
+  content: "";
+  flex: 0 0 25px;
+  width: 25px;
+  height: 2px;
+  background: #b5ce4a;
+}
+
+.rv-heading h2 {
+  margin: 0;
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: clamp(32px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -1px;
+}
+
+.rv-demo-note {
+  margin: 12px 0 0;
+  color: #756c65;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* KARUZELA */
+
+.rv-viewport {
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.rv-viewport:active {
+  cursor: grabbing;
+}
+
+.rv-viewport:focus-visible {
+  outline: 2px solid #592618;
+  outline-offset: 4px;
+}
+
+.rv-track {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  margin: 0;
+  padding: 12px 0 20px;
+  will-change: transform;
+}
+
+/* KARTY */
+
+.rv-card {
+  --rv-border: #d3aa2f;
+  --rv-background: #fffcf0;
+  --rv-avatar-background: #f5d45a;
+  --rv-avatar-color: #592618;
+
+  position: relative;
+  display: flex;
+  flex: 0 0 min(680px, calc(100% - 48px));
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 300px;
+  margin: 0;
+  padding: 30px 38px;
+  overflow: hidden;
+
+  background: var(--rv-background);
+  border: 2px solid var(--rv-border);
+  border-radius: 14px;
+
+  text-align: center;
+  opacity: 0.62;
+
+  transition:
+    opacity 350ms ease,
+    box-shadow 350ms ease;
+}
+
+/* AKCENT NA GÓRZE KARTY */
+
+.rv-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: var(--rv-border);
+}
+
+/* ŻÓŁTY */
+
+.rv-card--yellow {
+  --rv-border: #d3aa2f;
+  --rv-background: #fffcf0;
+  --rv-avatar-background: #f5d45a;
+  --rv-avatar-color: #592618;
+}
+
+/* ZIELONY */
+
+.rv-card--green {
+  --rv-border: #8ca333;
+  --rv-background: #f7faef;
+  --rv-avatar-background: #b5ce4a;
+  --rv-avatar-color: #344015;
+}
+
+/* BRĄZOWY */
+
+.rv-card--brown {
+  --rv-border: #80503c;
+  --rv-background: #fcf7f3;
+  --rv-avatar-background: #592618;
+  --rv-avatar-color: #ffffff;
+}
+
+.rv-card.is-active {
+  opacity: 1;
+  box-shadow: 0 8px 20px rgb(59 37 22 / 7%);
+}
+
+/* ZAWARTOŚĆ */
+
+.rv-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+  margin-bottom: 13px;
+
+  background: var(--rv-avatar-background);
+  border-radius: 50%;
+
+  color: var(--rv-avatar-color);
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.rv-name {
+  margin: 0 0 15px;
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.rv-quote {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  color: #51453c;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.85;
+}
+
+.rv-quote p {
+  margin: 0;
+}
+
+/* STEROWANIE */
+
+.rv-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.rv-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+
+  background: #ffffff;
+  border: 1px solid #d7ccbf;
+  border-radius: 50%;
+
+  color: #592618;
+  font: inherit;
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.rv-prev {
+  background: #f5d45a;
+  border-color: #f5d45a;
+}
+
+.rv-next {
+  background: #b5ce4a;
+  border-color: #b5ce4a;
+}
+
+.rv-prev:hover {
+  background: #ffe58a;
+  border-color: #ffe58a;
+}
+
+.rv-next:hover {
+  background: #c9df70;
+  border-color: #c9df70;
+}
+
+.rv-control:focus-visible {
+  outline: 2px solid #592618;
+  outline-offset: 3px;
+}
+
+.rv-control svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rv-toggle {
+  width: 78px;
+  padding-inline: 12px;
+
+  background: #592618;
+  border-color: #592618;
+  border-radius: 999px;
+
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rv-toggle:hover {
+  background: #75402e;
+  border-color: #75402e;
+}
+
+.rv-position {
+  min-width: 58px;
+  color: #756c65;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.rv-current {
+  color: #592618;
+  font-weight: 700;
+}
+
+/* KOMUNIKAT DLA CZYTNIKÓW EKRANU */
+
+.rv-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* WĘŻSZY DESKTOP */
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .rv-container {
+    width: calc(100% - 40px);
+  }
+}
+
+/* MOBILE / TABLET */
+
+@media (max-width: 1023px) {
+  .reviews-section {
+    padding: 40px 0 44px;
+  }
+
+  .rv-container {
+    width: calc(100% - 40px);
+  }
+
+  .rv-heading {
+    margin-bottom: 22px;
+  }
+
+  .rv-eyebrow {
+    margin-bottom: 13px;
+    font-size: 10px;
+    letter-spacing: 1.7px;
+  }
+
+  .rv-heading h2 {
+    font-size: 34px;
+  }
+
+  .rv-track {
+    gap: 18px;
+    padding-bottom: 16px;
+  }
+
+  .rv-card {
+    min-height: 310px;
+    padding: 26px 22px;
+    border-radius: 12px;
+  }
+
+  .rv-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 21px;
+  }
+
+  .rv-name {
+    margin-bottom: 13px;
+    font-size: 22px;
+  }
+
+  .rv-quote {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .rv-controls {
+    gap: 10px;
+    margin-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv-card,
+  .rv-control {
+    transition: none;
+  }
+}
+
+/* PRZYCISKI — WERSJA NEUTRALNA */
+
+.rv-prev,
+.rv-next,
+.rv-toggle {
+  background: #ffffff;
+  border-color: #d6d6d6;
+  color: #414141;
+}
+
+.rv-prev:hover,
+.rv-next:hover,
+.rv-toggle:hover {
+  background: #f2f2f2;
+  border-color: #999999;
+  color: #161616;
+}
+
+.rv-toggle {
+  width: 78px;
+  padding-inline: 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rv-control:focus-visible {
+  outline-color: #414141;
+}
+
+.rv-description {
+  max-width: 560px;
+  margin: 14px auto 0;
+  color: #6b625c;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* KARUZELA NA CAŁĄ SZEROKOŚĆ EKRANU — DESKTOP */
+
+@media (min-width: 1024px) {
+  .reviews-section {
+    overflow-x: clip;
+  }
+
+  .rv-viewport {
+    width: 100vw;
+    max-width: none;
+    margin-inline: calc(50% - 50vw);
+  }
+}
+
+/* ==============================
+   STOPKA
+============================== */
+
+.site-footer,
+.site-footer * {
+  box-sizing: border-box;
+}
+
+.site-footer {
+  padding: 36px 0 18px;
+
+  background: linear-gradient(
+    115deg,
+    #fff1c5 0%,
+    #f8e8ad 55%,
+    #f4dfa0 100%
+  );
+
+  border-top: 1px solid #e4ce8d;
+
+  color: #592618;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.ft-container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* GŁÓWNY UKŁAD */
+
+.ft-main {
+  display: grid;
+  grid-template-columns:
+    minmax(190px, 0.95fr)
+    minmax(250px, 1.05fr)
+    minmax(300px, 1.3fr);
+
+  align-items: center;
+  gap: 38px;
+}
+
+/* LOGO */
+
+.ft-brand {
+  min-width: 0;
+}
+
+.ft-logo {
+  display: block;
+  width: 205px;
+  max-width: 100%;
+}
+
+.ft-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ft-brand-description {
+  margin: 12px 0 0;
+
+  color: #76523a;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* DANE */
+
+.ft-info {
+  min-width: 0;
+}
+
+.ft-title {
+  margin: 0 0 10px;
+
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+.ft-address {
+  margin: 0 0 9px;
+
+  color: #6d4934;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.ft-contact {
+  color: #592618;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.ft-contact p {
+  margin: 0;
+}
+
+.ft-contact a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.ft-label {
+  display: inline-block;
+  min-width: 51px;
+  color: #806047;
+}
+
+.ft-contact .ft-email {
+  margin-top: 5px;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 14px;
+}
+
+.ft-contact a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* LINKI NAWIGACJI */
+
+.ft-nav {
+  min-width: 0;
+}
+
+.ft-nav ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 24px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ft-nav li {
+  min-width: 0;
+}
+
+.ft-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  min-height: 45px;
+  padding: 10px 0;
+
+  border-bottom: 1px solid rgb(89 38 24 / 22%);
+
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.ft-arrow {
+  flex-shrink: 0;
+  color: #8a6645;
+  font-size: 19px;
+  line-height: 1;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.ft-nav a:hover {
+  border-color: #592618;
+  color: #35160e;
+}
+
+.ft-nav a:hover .ft-arrow {
+  color: #592618;
+  transform: translate(2px, -2px);
+}
+
+/* DOLNY PASEK */
+
+.ft-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+
+  margin-top: 28px;
+  padding-top: 15px;
+
+  border-top: 1px solid rgb(89 38 24 / 18%);
+}
+
+.ft-copyright {
+  margin: 0;
+  color: #806047;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.ft-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.ft-legal a {
+  color: #6d4934;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.ft-legal a:hover {
+  color: #592618;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* DOSTĘPNOŚĆ */
+
+.site-footer a:focus-visible {
+  outline: 2px solid #592618;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* WĘŻSZY DESKTOP */
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .ft-container {
+    width: calc(100% - 40px);
+  }
+
+  .ft-main {
+    grid-template-columns:
+      minmax(170px, 0.85fr)
+      minmax(240px, 1.05fr)
+      minmax(290px, 1.3fr);
+
+    gap: 25px;
+  }
+
+  .ft-logo {
+    width: 180px;
+  }
+
+  .ft-nav ul {
+    column-gap: 18px;
+  }
+
+  .ft-nav a {
+    font-size: 14px;
+  }
+}
+
+/* MOBILE / TABLET */
+
+@media (max-width: 1023px) {
+  .site-footer {
+    padding: 26px 0 17px;
+    text-align: center;
+  }
+
+  .ft-container {
+    width: calc(100% - 40px);
+  }
+
+  .ft-main {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 21px;
+  }
+
+  .ft-logo {
+    width: 170px;
+    margin-inline: auto;
+  }
+
+  .ft-brand-description {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .ft-title {
+    margin-bottom: 7px;
+    font-size: 20px;
+  }
+
+  .ft-address {
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+
+  .ft-contact {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .ft-contact a {
+    margin-inline: auto;
+  }
+
+  .ft-contact .ft-email {
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  .ft-nav {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .ft-nav ul {
+    gap: 4px 20px;
+  }
+
+  .ft-nav a {
+    min-height: 43px;
+    padding: 9px 0;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .ft-arrow {
+    font-size: 17px;
+  }
+
+  .ft-bottom {
+    flex-direction: column;
+    gap: 9px;
+
+    margin-top: 21px;
+    padding-top: 12px;
+  }
+
+  .ft-legal {
+    order: -1;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .ft-legal a {
+    font-size: 12px;
+  }
+
+  .ft-copyright {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ft-nav a,
+  .ft-arrow {
+    transition: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(65, 45, 28, 0.60) 0%,
+        rgba(65, 45, 28, 0.32) 45%,
+        rgba(65, 45, 28, 0.06) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(65, 45, 28, 0.14) 0%,
+        transparent 45%
+      );
+  }
+}
+
+/* ==============================
+   IHR WEG ZUR LOGOPÄDIE
+============================== */
+
+.way-section,
+.way-section * {
+  box-sizing: border-box;
+}
+
+.way-section {
+  padding: 48px 0;
+  background: #ffffff;
+  color: #352d28;
+  font-family: "Roboto", Arial, sans-serif;
+  scroll-margin-top: -30px;
+}
+
+.wp-container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* NAGŁÓWEK */
+
+.wp-heading {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.wp-heading h2 {
+  margin: 0;
+
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: clamp(32px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -1px;
+  text-wrap: balance;
+}
+
+/* UKŁAD KROKÓW */
+
+.wp-steps {
+  --wp-gap: 40px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--wp-gap);
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wp-step {
+  position: relative;
+  min-width: 0;
+  padding-top: 9px;
+  text-align: center;
+}
+
+/* OKRĄGŁE IKONY */
+
+.wp-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 28px;
+
+  background: linear-gradient(
+    145deg,
+    #d0e386,
+    #b5ce4a
+  );
+
+  border: 1px solid #a7bf3f;
+  border-radius: 50%;
+
+  color: #592618;
+}
+
+.wp-icon::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+
+  border: 1px dashed #a7b575;
+  border-radius: 50%;
+}
+
+.wp-icon .bi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 37px;
+  line-height: 1;
+}
+
+/* DRUGA IKONA — ŻÓŁTA */
+
+.wp-step:nth-child(2) .wp-icon {
+  background: linear-gradient(
+    145deg,
+    #ffe992,
+    #f5d45a
+  );
+
+  border-color: #e5c34b;
+}
+
+.wp-step:nth-child(2) .wp-icon::before {
+  border-color: #cbb665;
+}
+
+/* TRZECIA IKONA — BRĄZOWA */
+
+.wp-step:nth-child(3) .wp-icon {
+  background: linear-gradient(
+    145deg,
+    #8a5741,
+    #592618
+  );
+
+  border-color: #70402d;
+  color: #ffffff;
+}
+
+.wp-step:nth-child(3) .wp-icon::before {
+  border-color: #b2917e;
+}
+
+/* PRZERYWANE STRZAŁKI MIĘDZY KROKAMI */
+
+.wp-connector {
+  position: absolute;
+  top: 55px;
+  left: calc(50% + 68px);
+
+  width: calc(100% + var(--wp-gap) - 136px);
+  height: 1px;
+
+  border-top: 1px dashed #a6b480;
+  pointer-events: none;
+}
+
+.wp-connector::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: 0;
+
+  width: 7px;
+  height: 7px;
+
+  border-right: 1px solid #84965c;
+  border-bottom: 1px solid #84965c;
+
+  transform: rotate(-45deg);
+}
+
+/* TREŚĆ KROKÓW */
+
+.wp-step h3 {
+  margin: 0 0 14px;
+
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+.wp-step > p {
+  margin: 0;
+
+  color: #59554b;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.wp-step > p + p {
+  margin-top: 13px;
+}
+
+.wp-step > .wp-secondary {
+  color: #79796e;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.wp-step strong {
+  color: #592618;
+  font-weight: 500;
+}
+
+/* DODATKOWE INFORMACJE */
+
+.wp-details {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: start;
+  gap: 42px;
+
+  margin-top: 32px;
+  padding-top: 26px;
+
+  border-top: 1px solid #e3e7da;
+}
+
+/* CYTAT */
+
+.wp-quote {
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 0 19px;
+  border-left: 2px solid #b5ce4a;
+}
+
+.wp-quote p {
+  margin: 0;
+
+  color: #747568;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.85;
+}
+
+.wp-quote cite {
+  display: block;
+  margin-top: 10px;
+
+  color: #8a897e;
+  font-size: 10px;
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.wp-quote a {
+  color: #687b30;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.wp-quote a:hover {
+  color: #592618;
+}
+
+/* KOSZTY */
+
+.wp-costs {
+  min-width: 0;
+}
+
+.wp-costs h3 {
+  margin: 0 0 11px;
+
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.wp-costs p {
+  margin: 0;
+
+  color: #747568;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.wp-costs p + p {
+  margin-top: 9px;
+}
+
+.wp-costs strong {
+  color: #592618;
+  font-weight: 500;
+}
+
+/* WYŚRODKOWANY PRZYCISK */
+
+.wp-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 29px;
+}
+
+.wp-contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 23px;
+
+  padding: 9px 10px 9px 22px;
+
+  background: #f5d45a;
+  border: 1px solid #f5d45a;
+  border-radius: 999px;
+
+  color: #592618;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.wp-contact-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 33px;
+  height: 33px;
+
+  background: rgb(255 255 255 / 38%);
+  border-radius: 50%;
+}
+
+.wp-contact-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wp-contact-link:hover {
+  background: #ffe58a;
+  border-color: #ffe58a;
+}
+
+.way-section a:focus-visible {
+  outline: 2px solid #592618;
+  outline-offset: 4px;
+}
+
+/* ANIMACJA POJAWIANIA SIĘ */
+
+.way-section.wp-animate .wp-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+
+  transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+}
+
+.way-section.wp-animate .wp-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wp-animate .wp-step:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.wp-animate .wp-step:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+/* WĘŻSZY DESKTOP */
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .wp-container {
+    width: calc(100% - 40px);
+  }
+
+  .wp-steps {
+    --wp-gap: 28px;
+  }
+
+  .wp-details {
+    gap: 30px;
+  }
+}
+
+/* MOBILE / TABLET */
+
+@media (max-width: 1023px) {
+  .way-section {
+    padding: 40px 0;
+  }
+
+  .wp-container {
+    width: calc(100% - 40px);
+  }
+
+  .wp-heading {
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+
+  .wp-heading h2 {
+    font-size: 34px;
+  }
+
+  .wp-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .wp-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 23px;
+  }
+
+  .wp-icon::before {
+    inset: -7px;
+  }
+
+  .wp-icon .bi {
+    font-size: 32px;
+  }
+
+  .wp-connector {
+    display: none;
+  }
+
+  .wp-step h3 {
+    margin-bottom: 12px;
+    font-size: 23px;
+  }
+
+  .wp-step > p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .wp-step > .wp-secondary {
+    font-size: 12px;
+  }
+
+  .wp-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+
+    margin-top: 29px;
+    padding-top: 24px;
+  }
+
+  .wp-quote {
+    padding-left: 16px;
+  }
+
+  .wp-costs h3 {
+    font-size: 21px;
+  }
+
+  .wp-footer {
+    margin-top: 25px;
+  }
+
+  .wp-animate .wp-step:nth-child(2),
+  .wp-animate .wp-step:nth-child(3) {
+    transition-delay: 0ms;
+  }
+}
+
+/* OGRANICZENIE RUCHU */
+
+@media (prefers-reduced-motion: reduce) {
+  .way-section.wp-animate .wp-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .wp-contact-link {
+    transition: none;
+  }
+}
+
+/* ==============================
+   MOTTO — ZDJĘCIE + PARALLAX
+============================== */
+
+.motto-section,
+.motto-section * {
+  box-sizing: border-box;
+}
+
+.motto-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 182px;
+  padding: 38.5px 0;
+
+  background-color: #592618;
+  background-image:
+    linear-gradient(
+      rgba(65, 35, 24, 0.48),
+      rgba(65, 35, 24, 0.48)
+    ),
+    url("../photos/terapie.jpg");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+
+  color: #ffffff;
+}
+
+/* TREŚĆ */
+
+.mt-container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+  text-align: center;
+}
+
+.mt-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px 12px;
+
+  margin: 0;
+
+  color: #ffffff;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: clamp(32.67px, 3.146vw, 42.35px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.6px;
+
+  text-shadow: 0 2px 14px rgb(0 0 0 / 22%);
+}
+
+/* PARALLAX — DESKTOP */
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .motto-section {
+    background-attachment: fixed;
+  }
+}
+
+/* WĘŻSZY DESKTOP */
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .mt-container {
+    width: calc(100% - 40px);
+  }
+}
+
+/* MOBILE / TABLET */
+
+@media (max-width: 1023px) {
+  .motto-section {
+    min-height: 165px;
+    padding: 33px 0;
+    background-attachment: scroll;
+  }
+
+  .mt-container {
+    width: calc(100% - 40px);
+  }
+
+  .mt-text {
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+
+    font-size: 30.25px;
+    line-height: 1.35;
+    letter-spacing: -0.4px;
+  }
+}
+
+/* OGRANICZENIE RUCHU */
+
+@media (prefers-reduced-motion: reduce) {
+  .motto-section {
+    background-attachment: scroll;
+  }
+}
+
+/* BRĄZOWY PRZYCISK KONTAKTOWY */
+
+.wp-contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 23px;
+
+  padding: 9px 10px 9px 22px;
+
+  background: #592618;
+  border: 1px solid #592618;
+  border-radius: 999px;
+
+  color: #ffffff;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-decoration: none;
+ margin-top: 20px;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.wp-contact-link:hover {
+  background: #75402e;
+  border-color: #75402e;
+  color: #ffffff;
+}
+
+.wp-contact-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 33px;
+  height: 33px;
+
+  background: rgb(255 255 255 / 16%);
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.wp-contact-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wp-contact-link:focus-visible {
+  outline: 2px solid #592618;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wp-contact-link {
+    transition: none;
+  }
+}
+
+/* POWOLNE POJAWIANIE SIĘ MOTTA */
+
+.motto-section.mt-fade .mt-text {
+  opacity: 0;
+  transition: opacity 2.2s ease;
+}
+
+.motto-section.mt-fade.mt-visible .mt-text {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motto-section.mt-fade .mt-text {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* ==============================
+   HERO — SPOKOJNE POJAWIANIE SIĘ
+============================== */
+
+.hero .hero-content > .eyebrow,
+.hero .hero-content > h1,
+.hero .hero-content > .hero-description,
+.hero .hero-content > .hero-intro,
+.hero .hero-content > .hero-actions {
+  animation: heroSlowReveal 2.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero .hero-content > .eyebrow {
+  animation-delay: 0.1s;
+}
+
+.hero .hero-content > h1 {
+  animation-delay: 0.25s;
+}
+
+.hero .hero-content > .hero-description {
+  animation-delay: 0.45s;
+}
+
+.hero .hero-content > .hero-intro {
+  animation-delay: 0.6s;
+}
+
+.hero .hero-content > .hero-actions {
+  animation-delay: 0.8s;
+}
+
+@keyframes heroSlowReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* OGRANICZENIE RUCHU */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero-content > .eyebrow,
+  .hero .hero-content > h1,
+  .hero .hero-content > .hero-description,
+  .hero .hero-content > .hero-intro,
+  .hero .hero-content > .hero-actions {
+    animation: none;
+  }
+}
+
+#therapien {
+  scroll-margin-top: -60px;
+}
+
+#kontakt {
+  scroll-margin-top: -30px;
+}
+
+/* POWRÓT NA GÓRĘ */
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 90;
+
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: #592618;
+  color: #fff;
+
+  box-shadow: 0 5px 18px rgba(59, 30, 20, 0.16);
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+.back-to-top svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid #592618;
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back-to-top:hover {
+    background: #f5d45a;
+    color: #592618;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(59, 30, 20, 0.2);
+  }
+}
+
+@media (max-width: 1023px) {
+  .back-to-top {
+    right: 18px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    width: 42px;
+    height: 42px;
+  }
+
+  .back-to-top svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .th-content #th-children-title {
+    font-size: 25px;
+    line-height: 1.2;
+  }
+}
+ </style>
+</head>
+
+<body>
+
+  <!-- IKONY -->
+
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <symbol id="phone" viewBox="0 0 24 24">
+        <path d="M7.5 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3.5l-5-2-2 2a14 14 0 0 1-6.5-6.5l2-2Z"/>
+      </symbol>
+
+      <symbol id="mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m3 6 9 7 9-7"/>
+      </symbol>
+
+      <symbol id="chevron" viewBox="0 0 24 24">
+        <path d="m6 9 6 6 6-6"/>
+      </symbol>
+
+      <symbol id="arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14m-6-6 6 6-6 6"/>
+      </symbol>
+
+      <symbol id="arrow-up" viewBox="0 0 24 24">
+        <path d="M6 18 18 6M6 6h12v12"/>
+      </symbol>
+
+      <symbol id="close" viewBox="0 0 24 24">
+        <path d="m5 5 14 14M5 19 19 5"/>
+      </symbol>
+
+      <symbol id="pause" viewBox="0 0 24 24">
+        <path d="M8 5v14M16 5v14" stroke-width="2.5"/>
+      </symbol>
+
+      <symbol id="play" viewBox="0 0 24 24">
+        <path d="m8 5 11 7-11 7Z"/>
+      </symbol>
+
+      <symbol id="prev" viewBox="0 0 24 24">
+        <path d="m14 6-6 6 6 6"/>
+      </symbol>
+
+      <symbol id="next" viewBox="0 0 24 24">
+        <path d="m10 6 6 6-6 6"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a href="#main" class="skip-link">
+    Zum Inhalt springen
+  </a>
+
+  <!-- NAGŁÓWEK -->
+
+  <header class="site-header">
+    <div class="container header-main">
+
+      <a
+        href="/index.html"
+        class="logo-link"
+        aria-label="Sprachsch[Dil] – Startseite"
+      >
+        <img
+          src="/photos/logo.png"
+          alt="Sprachsch[Dil] – Praxis für Logopädie"
+          width="2025"
+          height="776"
+        >
+      </a>
+
+      <button
+        type="button"
+        class="mobile-toggle"
+        aria-label="Hauptmenü öffnen"
+        aria-controls="main-navigation"
+        aria-expanded="false"
+      >
+        <span class="burger-lines" aria-hidden="true">
+          <i></i>
+          <i></i>
+        </span>
+      </button>
+
+      <div class="header-content">
+
+        <!-- MENU -->
+
+        <nav
+          class="nav-bar"
+          id="main-navigation"
+          aria-label="Hauptnavigation"
+        >
+          <div class="nav-inner">
+
+            <!-- NAGŁÓWEK MENU MOBILE -->
+
+            <div class="drawer-head">
+              <img
+                class="drawer-logo"
+                src="/photos/logo.png"
+                alt="Sprachsch[Dil] – Praxis für Logopädie"
+                width="2025"
+                height="776"
+              >
+
+              <button
+                class="drawer-close"
+                type="button"
+                aria-label="Hauptmenü schließen"
+              >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#close"/>
+                </svg>
+              </button>
+            </div>
+
+            <ul class="primary-menu">
+
+              <!-- HOME -->
+
+              <li class="menu-item">
+                <div class="menu-row">
+                  <a
+                    href="#start"
+                    class="menu-link"
+                    aria-current="page"
+                  >
+                    Home
+                  </a>
+                </div>
+              </li>
+
+              <!-- ZESPÓŁ -->
+
+              <li class="menu-item has-submenu">
+                <div class="menu-row">
+                  <a href="#team" class="menu-link">
+                    Wer wir sind
+                  </a>
+
+                  <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-team"
+                    aria-label="Untermenü Wer wir sind"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#chevron"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul class="submenu" id="submenu-team" hidden>
+                  <li class="submenu-label" aria-hidden="true">
+                    Unser Team
+                  </li>
+
+                  <li>
+                    <a href="#eva-katharina-weber">
+                      Eva Katharina Weber
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#lena-pasqualini">
+                      Lena Pasqualini
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- TERAPIE DLA DOROSŁYCH -->
+
+              <li class="menu-item has-submenu">
+                <div class="menu-row">
+                  <a
+                    href="/therapie-erwachsene/"
+                    class="menu-link"
+                  >
+                    Therapie Erwachsene
+                  </a>
+
+                  <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-adults"
+                    aria-label="Untermenü Therapie Erwachsene"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#chevron"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul class="submenu" id="submenu-adults" hidden>
+                  <li class="submenu-label" aria-hidden="true">
+                    Therapie für Erwachsene
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#aphasie">
+                      Aphasie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#dysarthrie">
+                      Dysarthrophonie / Dysarthrie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#sprechapraxie">
+                      Sprechapraxie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#dysphagie">
+                      Dysphagie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#facialislaehmung">
+                      Facialislähmung
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-erwachsene/#dysphonie">
+                      Dysphonie
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- TERAPIE DLA DZIECI I MŁODZIEŻY -->
+
+              <li class="menu-item has-submenu">
+                <div class="menu-row">
+                  <a
+                    href="/therapie-kinder-und-jugendliche/"
+                    class="menu-link"
+                  >
+                    Therapie Kinder und Jugendliche
+                  </a>
+
+                  <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-children"
+                    aria-label="Untermenü Therapie Kinder und Jugendliche"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#chevron"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul class="submenu" id="submenu-children" hidden>
+                  <li class="submenu-label" aria-hidden="true">
+                    Therapie für Kinder &amp; Jugendliche
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#sprachentwicklungsstoerung">
+                      Sprachentwicklungsstörung
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#aussprachestoerungen">
+                      Aussprachestörungen
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#myofunktionelle-dysfunktion">
+                      Myofunktionelle Dysfunktion / Orofaziale Störung
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#stoerungen-des-redeflusses">
+                      Störungen des Redeflusses
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#lese-rechtschreib-stoerungen">
+                      Lese-Rechtschreib-Störungen
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/therapie-kinder-und-jugendliche/#auditive-wahrnehmung">
+                      Auditive Wahrnehmungs- und Verarbeitungsstörung
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- GALERIA PRAXIS -->
+
+              <li class="menu-item">
+                <div class="menu-row">
+                  <a
+                    href="#praxis-title"
+                    class="menu-link"
+                    data-open-praxis
+                  >
+                    Praxis
+                  </a>
+                </div>
+              </li>
+
+              <!-- KONTAKT -->
+
+              <li class="menu-item">
+                <div class="menu-row">
+                  <a
+                    href="#kontakt"
+                    class="button menu-contact"
+                  >
+                    Kontakt
+
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#arrow-up"/>
+                    </svg>
+                  </a>
+                </div>
+              </li>
+
+            </ul>
+
+            <!-- KONTAKT W MENU MOBILE -->
+
+            <div class="drawer-footer">
+              <a href="tel:+4971188811074">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#phone"/>
+                </svg>
+
+                0711 888 110 74
+              </a>
+
+              <a href="mailto:info@stuttgarter-logopaedie.de">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#mail"/>
+                </svg>
+
+                info@stuttgarter-logopaedie.de
+              </a>
+            </div>
+
+          </div>
+        </nav>
+
+        <!-- DANE KONTAKTOWE POD MENU -->
+
+        <div class="contact-strip">
+          <div class="contact-row">
+
+            <span>
+              <strong>Telefon:</strong>
+
+              <a href="tel:+4971188811074">
+                0711 888 110 74
+              </a>
+            </span>
+
+            <span>
+              <strong>Ort:</strong>
+              Schlosserstraße 5 in 70180 Stuttgart
+            </span>
+
+            <span>
+              <strong>E-Mail:</strong>
+
+              <a href="mailto:info@stuttgarter-logopaedie.de">
+                info@stuttgarter-logopaedie.de
+              </a>
+            </span>
+
+            <span class="hours-line">
+              <strong>Sprechzeiten:</strong>
+
+              <span class="hours-desktop">
+                Mo–Fr 08:00–19:00 · Sa 09:00–14:00 Uhr
+              </span>
+
+              <span class="hours-mobile">
+                Montag – Freitag: 08:00–19:00 Uhr<br>
+                Samstag: 09:00–14:00 Uhr
+              </span>
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-backdrop" aria-hidden="true"></div>
+
+  <!-- HERO -->
+
+  <main id="main">
+    <section
+      class="hero"
+      id="start"
+      aria-label="Willkommen in unserer Praxis"
+    >
+
+      <div
+        class="hero-slides"
+        aria-roledescription="Diashow"
+        aria-label="Einblicke in unsere Praxis"
+      >
+        <div
+          class="hero-slide is-active"
+          role="group"
+          aria-roledescription="Folie"
+          aria-label="1 von 3"
+          aria-hidden="false"
+        >
+          <img
+            src="../photos/1.jpg"
+            alt="Eva Katharina Weber und Lena Pasqualini in ihrer Praxis"
+            fetchpriority="high"
+          >
+        </div>
+
+        <div
+          class="hero-slide"
+          role="group"
+          aria-roledescription="Folie"
+          aria-label="2 von 3"
+          aria-hidden="true"
+        >
+          <img
+            src="../photos/2.jpg"
+            alt="Freundlicher Eingangsbereich der Praxis"
+            decoding="async"
+          >
+        </div>
+
+        <div
+          class="hero-slide"
+          role="group"
+          aria-roledescription="Folie"
+          aria-label="3 von 3"
+          aria-hidden="true"
+        >
+          <img
+            src="../photos/3.jpg"
+            alt="Einblick in die Räume der logopädischen Praxis"
+            decoding="async"
+          >
+        </div>
+      </div>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <p class="eyebrow">Logopädie in Stuttgart</p>
+
+        <h1>
+          Willkommen bei
+          <span>Sprachsch[Dil]</span>
+        </h1>
+
+        <p class="hero-description">
+          Bei uns erhalten Sie kompetente Beratung und Therapie
+          in den Bereichen Sprache, Schriftsprache, Sprechen,
+          Schlucken und Stimme!
+        </p>
+
+        <p class="hero-intro">
+          Hier finden Sie einen ersten Einblick in die
+          unterschiedlichen Therapiebereiche und unsere Arbeit.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            href="mailto:info@stuttgarter-logopaedie.de"
+            class="button"
+          >
+            Kontakt aufnehmen
+
+            <svg class="icon" aria-hidden="true">
+              <use href="#arrow-up"/>
+            </svg>
+          </a>
+
+          <button
+            type="button"
+            class="hero-more"
+            data-open-praxis
+          >
+            Unsere Praxis
+
+            <svg class="icon" aria-hidden="true">
+              <use href="#arrow"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="container hero-bottom">
+        <div class="slider-controls">
+
+          <div class="slide-counter" aria-hidden="true">
+            <span class="current">01</span>
+            <span>/</span>
+            <span>03</span>
+          </div>
+
+          <div
+            class="slide-dots"
+            role="group"
+            aria-label="Foto auswählen"
+          >
+            <button
+              class="slide-dot"
+              type="button"
+              data-slide="0"
+              aria-label="Foto 1 anzeigen"
+              aria-pressed="true"
+            ></button>
+
+            <button
+              class="slide-dot"
+              type="button"
+              data-slide="1"
+              aria-label="Foto 2 anzeigen"
+              aria-pressed="false"
+            ></button>
+
+            <button
+              class="slide-dot"
+              type="button"
+              data-slide="2"
+              aria-label="Foto 3 anzeigen"
+              aria-pressed="false"
+            ></button>
+          </div>
+
+          <span class="hero-divider" aria-hidden="true"></span>
+
+          <button
+            type="button"
+            class="round-control slider-prev"
+            aria-label="Vorheriges Foto"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="#prev"/>
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            class="round-control slider-next"
+            aria-label="Nächstes Foto"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="#next"/>
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            class="round-control slider-pause"
+            aria-label="Diashow pausieren"
+            aria-pressed="false"
+          >
+            <svg class="icon pause-icon" aria-hidden="true">
+              <use href="#pause"/>
+            </svg>
+
+            <svg class="icon play-icon" aria-hidden="true">
+              <use href="#play"/>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+
+      <p
+        class="sr-only slide-announcement"
+        aria-live="polite"
+        aria-atomic="true"
+      ></p>
+
+    </section>
+
+    <!-- INFORMACJE POD HERO -->
+
+   <section
+  class="praxis-info"
+  id="informationen"
+  aria-labelledby="pi-title"
+>
+  <div class="pi-container">
+
+    <div class="pi-intro">
+      <div>
+        <p class="pi-eyebrow">
+          Gut zu wissen
+        </p>
+
+        <h2 id="pi-title">
+          Wissenswertes rund um Ihre Therapie.
+        </h2>
+      </div>
+
+      <p class="pi-description">
+        Entdecken Sie unser Therapieangebot und erfahren Sie,
+        wie Sie Ihren ersten Termin vereinbaren.
+      </p>
+    </div>
+
+    <div class="pi-grid">
+
+      <!-- TERAPIE -->
+
+      <article class="pi-card" id="behandlungsfelder">
+        <img
+          class="pi-photo"
+          src="../photos/1.jpg"
+          alt="Das Team der Praxis Sprachsch[Dil]"
+          width="1933"
+          height="1289"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="pi-content">
+          <span class="pi-number">
+            01 / Therapieangebote
+          </span>
+
+          <h3>Die Behandlungsfelder</h3>
+
+          <p class="pi-card-text">
+            Unsere Therapieangebote im Überblick.
+          </p>
+
+          <a class="pi-action" href="#therapien">
+            Mehr erfahren
+
+            <span class="pi-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 18 18 6M6 6h12v12"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </article>
+
+      <!-- PIERWSZA WIZYTA -->
+
+      <article class="pi-card" id="weg-zur-logopaedie">
+        <img
+          class="pi-photo"
+          src="../photos/2.jpg"
+          alt="Der Eingangsbereich der Praxis Sprachsch[Dil]"
+          width="1933"
+          height="1289"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="pi-content">
+          <span class="pi-number">
+            02 / Ihr erster Besuch
+          </span>
+
+          <h3>Der Weg zur Logopädie</h3>
+
+          <p class="pi-card-text">
+            So beginnt Ihre Therapie bei uns.
+          </p>
+
+          <a class="pi-action" href="#erste-schritte">
+            Die ersten Schritte
+
+            <span class="pi-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 18 18 6M6 6h12v12"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </article>
+
+      <!-- KONTAKT -->
+
+      <article class="pi-card" id="zeit-fuer-logopaedie">
+        <img
+          class="pi-photo"
+          src="../photos/3.jpg"
+          alt="Einblick in die Räume der logopädischen Praxis"
+          width="1010"
+          height="400"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="pi-content">
+          <span class="pi-number">
+            03 / Terminvereinbarung
+          </span>
+
+          <h3>Zeit für Logopädie</h3>
+
+          <p class="pi-card-text">
+            Gemeinsam finden wir einen passenden Termin.
+          </p>
+
+          <a class="pi-action" href="#kontakt">
+            Termin anfragen
+
+            <span class="pi-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 18 18 6M6 6h12v12"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ==============================
+     DLACZEGO SPRACHSCH[DIL]?
+============================== -->
+
+<section
+  class="praxis-metrics"
+  aria-labelledby="pm-title"
+>
+  <div class="pm-container">
+
+    <div class="pm-heading">
+      <p class="pm-eyebrow">
+        Warum Sprachsch[Dil]?
+      </p>
+
+      <h2 id="pm-title">
+        Erfahrung, die Vertrauen schafft.
+      </h2>
+    </div>
+
+    <div class="pm-grid">
+
+      <!-- 01: PONAD 5000 PACJENTÓW -->
+
+      <div class="pm-stat">
+        <p class="pm-value">
+          <span class="pm-sr-only">
+            Über 5.000
+          </span>
+
+          <span
+            class="pm-count"
+            data-count="5000"
+            aria-hidden="true"
+          >5.000</span>
+
+          <span
+            class="pm-plus"
+            aria-hidden="true"
+          >+</span>
+        </p>
+
+        <h3 class="pm-label">
+          Begleitete Patientinnen und Patienten
+        </h3>
+      </div>
+
+      <!-- 02: 30 LAT DOŚWIADCZENIA -->
+
+      <div class="pm-stat">
+        <p class="pm-value">
+          <span class="pm-sr-only">
+            30
+          </span>
+
+          <span
+            class="pm-count"
+            data-count="30"
+            aria-hidden="true"
+          >30</span>
+        </p>
+
+        <h3 class="pm-label">
+          Jahre Erfahrung
+        </h3>
+      </div>
+
+      <!--
+        03: UKOŃCZONE SZKOLENIA
+        40 TO WARTOŚĆ ROBOCZA — DO POTWIERDZENIA.
+        Przy zmianie popraw data-count i oba teksty liczby.
+      -->
+
+      <div class="pm-stat">
+        <p class="pm-value">
+          <span class="pm-sr-only">
+            40
+          </span>
+
+          <span
+            class="pm-count"
+            data-count="40"
+            aria-hidden="true"
+          >40</span>
+        </p>
+
+        <h3 class="pm-label">
+          Absolvierte Fortbildungen
+        </h3>
+      </div>
+
+      <!-- 04: 12 OBSZARÓW TERAPEUTYCZNYCH -->
+
+      <div class="pm-stat">
+        <p class="pm-value">
+          <span class="pm-sr-only">
+            12
+          </span>
+
+          <span
+            class="pm-count"
+            data-count="12"
+            aria-hidden="true"
+          >12</span>
+        </p>
+
+        <h3 class="pm-label">
+          Behandlungsfelder
+        </h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     NASZE TERAPIE
+============================== -->
+
+<section
+  class="therapy-section"
+  id="therapien"
+  aria-labelledby="th-title"
+>
+  <div class="th-container">
+
+    <div class="th-heading">
+      <div>
+        <p class="th-eyebrow">
+          Unser Therapieangebot
+        </p>
+
+        <h2 id="th-title">
+          Unsere Therapien
+        </h2>
+      </div>
+
+      <p class="th-description">
+        Entdecken Sie unser logopädisches Angebot
+        für Kinder, Jugendliche und Erwachsene.
+        Wählen Sie den passenden Bereich und
+        erfahren Sie mehr.
+      </p>
+    </div>
+
+    <div class="th-grid">
+
+      <!-- TERAPIA DOROSŁYCH -->
+
+      <a
+        class="th-card"
+        href="/therapie-erwachsene/"
+        aria-labelledby="th-adults-title"
+      >
+        <img
+          class="th-photo"
+          src="../photos/jugendliche.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="th-content">
+          <h3 id="th-adults-title">
+            Therapie Erwachsene
+          </h3>
+
+          <span class="th-button" aria-hidden="true">
+            Mehr erfahren
+
+            <span class="th-button-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 18 18 6M6 6h12v12"/>
+              </svg>
+            </span>
+          </span>
+        </div>
+      </a>
+
+      <!-- TERAPIA DZIECI I MŁODZIEŻY -->
+
+      <a
+        class="th-card"
+        href="/therapie-kinder-und-jugendliche/"
+        aria-labelledby="th-children-title"
+      >
+        <img
+          class="th-photo"
+          src="../photos/kinder.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="th-content">
+          <h3 id="th-children-title">
+            Therapie Kinder und Jugendliche
+          </h3>
+
+          <span class="th-button" aria-hidden="true">
+            Mehr erfahren
+
+            <span class="th-button-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 18 18 6M6 6h12v12"/>
+              </svg>
+            </span>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     NASZ ZESPÓŁ
+============================== -->
+
+<section
+  class="team-section"
+  id="team"
+  aria-labelledby="tm-title"
+>
+  <div class="tm-container">
+
+    <!-- WPROWADZENIE -->
+
+    <div class="tm-intro">
+      <div>
+        <p class="tm-eyebrow">
+          Unser Team
+        </p>
+
+        <h2 id="tm-title">
+          Persönlich für Sie da.
+        </h2>
+      </div>
+
+      <p class="tm-description">
+        Wir begleiten Kinder, Jugendliche und Erwachsene mit
+        fachlicher Kompetenz, Erfahrung und persönlicher Zuwendung.
+        Lernen Sie die Menschen hinter Sprachsch[Dil] kennen.
+      </p>
+    </div>
+
+    <!-- ==============================
+         EVA KATHARINA WEBER
+    ============================== -->
+
+    <article
+      class="tm-member"
+      id="eva-katharina-weber"
+      aria-labelledby="tm-eva-title"
+    >
+
+      <!-- ZDJĘCIE PO LEWEJ -->
+
+      <figure class="tm-portrait">
+        <div class="tm-photo-frame">
+          <img
+            class="tm-photo"
+            src="../photos/eva.jpg"
+            alt="Eva Katharina Weber, Logopädin"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      </figure>
+
+      <!-- TEKST PO PRAWEJ -->
+
+      <div class="tm-content">
+        <h3 id="tm-eva-title">
+          Eva Katharina Weber
+        </h3>
+
+        <p class="tm-qualification">
+          staatl. anerkannte Logopädin<br>
+          Heilerzieherin und examinierte Erzieherin
+        </p>
+
+        <div class="tm-body">
+          <p>
+            Der Weg zur Logopädie war für mich ein ganz konsequenter.
+            Nach meiner Ausbildung zur Heilerzieherin habe ich lange
+            Zeit mit Menschen gearbeitet, die von geistigen und
+            körperlichen Behinderungen beeinträchtigt waren.
+          </p>
+
+          <p>
+            Als ich danach im integrativen Kindergarten an der
+            Umsetzung des Bildungs- und Orientierungsplans mitwirkte,
+            begegnete ich dem Schwerpunkt Sprache. Sprachliche
+            Kompetenz ist auch im Kindesalter eine wichtige Fähigkeit
+            zur Teilhabe an der Gesellschaft.
+            Ich beschloss Logopädin zu werden.
+          </p>
+
+          <p>
+            In den vergangenen Jahren arbeitete ich als fachliche
+            Leitung in einem ambulanten Therapiezentrum für
+            Neurologische Rehabilitation. Für das Selbstbewusstsein
+            eines jeden Menschen, egal ob jung oder alt, ist es
+            wichtig, sich als kompetenten Sprecher zu erleben.
+          </p>
+        </div>
+      </div>
+
+      <!-- SPECJALIZACJE NA CAŁĄ SZEROKOŚĆ -->
+
+      <div class="tm-specialties">
+        <h4>Therapieschwerpunkte</h4>
+
+        <ul class="tm-specialties-list">
+          <li>
+            Neurologische Sprach- und Sprechstörungen
+          </li>
+
+          <li>
+            Kindersprache
+          </li>
+
+          <li>
+            Zungenfehlfunktion und Schluckstörungen
+            bei Kieferanomalien
+          </li>
+        </ul>
+      </div>
+
+    </article>
+
+    <!-- ==============================
+         LENA PASQUALINI
+    ============================== -->
+
+    <article
+      class="tm-member tm-member--reverse"
+      id="lena-pasqualini"
+      aria-labelledby="tm-lena-title"
+    >
+
+      <!-- ZDJĘCIE: DESKTOP PO PRAWEJ, MOBILE NAD TEKSTEM -->
+
+      <figure class="tm-portrait">
+        <div class="tm-photo-frame">
+          <img
+            class="tm-photo"
+            src="../photos/lena.jpg"
+            alt="Lena Pasqualini, Logopädin"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      </figure>
+
+      <!-- TEKST PO LEWEJ -->
+
+      <div class="tm-content">
+        <h3 id="tm-lena-title">
+          Lena Pasqualini
+        </h3>
+
+        <p class="tm-qualification">
+          staatlich anerkannte Logopädin
+        </p>
+
+        <blockquote class="tm-quote">
+          <p>
+            „Die Grenzen meiner Sprache bedeuten
+            die Grenzen meiner Welt.“
+          </p>
+
+          <cite>Ludwig Wittgenstein</cite>
+        </blockquote>
+
+        <div class="tm-body">
+          <p>
+            Es liegt mir sehr am Herzen, Menschen jeden Alters
+            zu unterstützen, ihre sprachlichen, sprechmotorischen
+            und stimmlichen Fähigkeiten zu erweitern.
+          </p>
+
+          <p>
+            Für die Entwicklung des Selbstbewusstseins und der
+            Entfaltung der Persönlichkeit beinhaltet meine
+            therapeutische Arbeit beispielsweise:
+          </p>
+
+          <ul class="tm-goals">
+            <li>
+              Sprache zu entdecken und zu erweitern
+            </li>
+
+            <li>
+              Flüssigeres Sprechen zu erreichen
+            </li>
+
+            <li>
+              Die Belastbarkeit der Stimme zu erhöhen, dabei
+              Druck- oder Schmerzempfindung im Halsbereich abzubauen
+            </li>
+
+            <li>
+              Sich nach neurologischer Erkrankung sprachlich
+              wieder adäquat ausdrücken zu können
+            </li>
+          </ul>
+
+          <p>
+            Hierbei ist es mir sehr wichtig, Menschen mit
+            Empathie und Wertschätzung zu begegnen.
+          </p>
+        </div>
+      </div>
+
+      <!-- SPECJALIZACJE NA CAŁĄ SZEROKOŚĆ -->
+
+      <div class="tm-specialties">
+        <h4>Therapieschwerpunkte</h4>
+
+        <ul class="tm-specialties-list">
+          <li>
+            Kindersprache bei deutsch- und mehrsprachigen Kindern
+          </li>
+
+          <li>
+            Stottern
+          </li>
+
+          <li>
+            Auffälligkeiten in der phonologischen Bewusstheit
+            und damit einhergehende Lese-Rechtschreibschwäche
+          </li>
+
+          <li>
+            Stimmtherapie
+          </li>
+
+          <li>
+            Zungenfehlstellungen und damit verbundene
+            Schluckstörungen
+          </li>
+
+          <li>
+            Neurologische Sprach- und Sprechstörungen
+          </li>
+        </ul>
+      </div>
+
+    </article>
+
+     <!-- PRZYCISK NA ŚRODKU -->
+
+    <div class="wp-footer wp-reveal">
+      <a class="wp-contact-link" href="#kontakt">
+        <span>Kontakt aufnehmen</span>
+
+        <span class="wp-contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 18 18 6M6 6h12v12"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     IHR WEG ZUR LOGOPÄDIE
+============================== -->
+
+<section
+  class="way-section"
+  id="erste-schritte"
+  aria-labelledby="wp-title"
+>
+  <div class="wp-container">
+
+    <!-- NAGŁÓWEK -->
+
+    <div class="wp-heading wp-reveal">
+      <h2 id="wp-title">
+        Ihr Weg zur logopädischen Behandlung
+      </h2>
+    </div>
+
+    <!-- TRZY KROKI -->
+
+    <ol class="wp-steps">
+
+      <!-- KROK 1 -->
+
+      <li class="wp-step wp-reveal">
+        <div class="wp-icon" aria-hidden="true">
+          <i class="bi bi-file-earmark-medical"></i>
+        </div>
+
+        <span class="wp-connector" aria-hidden="true"></span>
+
+        <h3>1. Schritt</h3>
+
+        <p>
+          Besteht bei Ihnen ein logopädischer Behandlungsbedarf,
+          haben Sie die Möglichkeit, in Rücksprache mit Ihrem Arzt
+          ein Rezept für Logopädie anzufragen. Hierzu empfehlen wir
+          Ihnen zunächst einen Beratungstermin bei Ihrem
+          behandelnden Arzt.
+        </p>
+
+        <p class="wp-secondary">
+          Zuweisende Ärztinnen und Ärzte können sein:
+          Allgemeinärzte, Neurologen, Kinderärzte,
+          Hals-Nasen-Ohren-Ärzte, Zahnärzte und/oder
+          Kieferorthopäden etc.
+        </p>
+      </li>
+
+      <!-- KROK 2 -->
+
+      <li class="wp-step wp-reveal">
+        <div class="wp-icon" aria-hidden="true">
+          <i class="bi bi-calendar-check"></i>
+        </div>
+
+        <span class="wp-connector" aria-hidden="true"></span>
+
+        <h3>2. Schritt</h3>
+
+        <p>
+          In unserer Praxis erhalten Sie einen ersten Termin.
+          Sie können uns telefonisch oder per Mail kontaktieren.
+          Gerne können Sie auch persönlich zur Terminvereinbarung
+          zu uns kommen.
+        </p>
+
+        <p class="wp-secondary">
+          Bei Patienten, welche aus physischen, ärztlich
+          begründeten Fällen nicht in der Praxis behandelt
+          werden können, sind selbstverständlich
+          <strong>Hausbesuche möglich!</strong>
+        </p>
+      </li>
+
+      <!-- KROK 3 -->
+
+      <li class="wp-step wp-reveal">
+        <div class="wp-icon" aria-hidden="true">
+          <i class="bi bi-chat-dots"></i>
+        </div>
+
+        <h3>3. Schritt</h3>
+
+        <p>
+          Im ersten Kontakt wird ein Aufnahmegespräch geführt.
+          Im Anschluss erfolgt eine Befunderhebung.
+          Nach gemeinsamer Zielsetzung wird die Therapie begonnen.
+        </p>
+
+        <p class="wp-secondary">
+          In der Regel beträgt die Therapiedauer
+          <strong>45 Minuten</strong> mit
+          <strong>1–2 Mal pro Woche.</strong>
+        </p>
+      </li>
+
+    </ol>
+
+    <!-- CYTAT I KOSZTY -->
+
+    <div class="wp-details wp-reveal">
+
+      <blockquote class="wp-quote">
+        <p>
+          Alle Versicherten einer gesetzlichen Krankenkasse
+          haben Anspruch auf Versorgung mit Heilmitteln nach
+          dem Fünften Sozialgesetzbuch (SGB V).
+          Zu den Heilmitteln gehören auch Maßnahmen der
+          Stimm-, Sprech- und Sprachtherapie.
+          Dementsprechend können Patienten mit Sprach-,
+          Sprech-, Stimm- und Schluckproblemen, für die ein
+          Arzt eine Indikation festgestellt hat, Leistungen
+          zu diesem Zwecke aus der gesetzlichen
+          Krankenversicherung in Anspruch nehmen.
+        </p>
+
+        <cite>
+          Zitat aus Deutscher Bundesverband für Logopädie e.V.:
+          <a
+            href="https://www.dbl-ev.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            www.dbl-ev.de
+          </a>
+        </cite>
+      </blockquote>
+
+      <div class="wp-costs">
+        <h3>Behandlungskosten</h3>
+
+        <p>
+          Bei Patienten bis zum 18. Lebensjahr kommen die
+          gesetzlichen Krankenkassen komplett für die
+          Behandlungskosten auf.
+        </p>
+
+        <p>
+          Ab dem 18. Lebensjahr besteht die Zuzahlungspflicht.
+          Die Zuzahlung ergibt sich pauschal aus
+          <strong>10 Euro Rezeptgebühr</strong> sowie zusätzlich
+          <strong>10 % des Rezeptwertes.</strong>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==============================
+     MOTTO ZE ZDJĘCIEM
+============================== -->
+
+<section class="motto-section" aria-label="Unser Leitgedanke">
+  <div class="mt-container">
+    <p class="mt-text">
+      <span>Sprache verbindet.</span>
+      <span>Wir begleiten Sie.</span>
+    </p>
+  </div>
+</section>
+<!-- ==============================
+     KONTAKT
+============================== -->
+
+<section
+  class="contact-section"
+  id="kontakt"
+  aria-labelledby="ct-title"
+>
+  <div class="ct-container">
+
+    <!-- NAGŁÓWEK -->
+
+    <div class="ct-heading">
+      <div>
+        <p class="ct-eyebrow">
+          Kontakt &amp; Anfahrt
+        </p>
+
+        <h2 id="ct-title">
+          Wir freuen uns auf Sie.
+        </h2>
+      </div>
+
+      <p class="ct-description">
+        Sie möchten einen Termin vereinbaren oder haben eine Frage?
+        Kontaktieren Sie uns telefonisch, per E-Mail oder persönlich
+        in unserer Praxis.
+      </p>
+    </div>
+
+    <div class="ct-layout">
+
+      <!-- LEWA KOLUMNA: DANE I GODZINY -->
+
+      <div class="ct-left">
+
+        <div class="ct-info">
+          <h3>Sprachsch[Dil]</h3>
+
+          <p class="ct-subtitle">
+            Praxisgemeinschaft für Logopädie
+          </p>
+
+          <address class="ct-address">
+            Schlosserstraße 5<br>
+            70180 Stuttgart
+          </address>
+
+          <dl class="ct-contacts">
+            <div class="ct-contact-row">
+              <dt>Telefon</dt>
+
+              <dd>
+                <a href="tel:+4971188811074">
+                  +49 (0)711 88811074
+                </a>
+              </dd>
+            </div>
+
+            <div class="ct-contact-row">
+              <dt>Fax</dt>
+
+              <dd>
+                +49 (0)711 41004018
+              </dd>
+            </div>
+
+            <div class="ct-contact-row">
+              <dt>E-Mail</dt>
+
+              <dd>
+                <a href="mailto:info@stuttgarter-logopaedie.de">
+                  info@stuttgarter-logopaedie.de
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <p class="ct-info-note">
+            Termine oder andere Anliegen können Sie gerne telefonisch
+            oder per E-Mail anfragen. Natürlich können Sie auch vor Ort
+            in unserer Praxis einen Termin vereinbaren.
+            Über Ihren Besuch würden wir uns freuen!
+          </p>
+        </div>
+
+        <!-- GODZINY OTWARCIA -->
+
+        <div class="ct-hours">
+          <h3 id="ct-hours-title">
+            Sprechzeiten
+          </h3>
+
+          <table aria-labelledby="ct-hours-title">
+            <tbody>
+              <tr>
+                <th scope="row">Montag</th>
+                <td>08:00 – 19:00 Uhr</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Dienstag</th>
+                <td>08:00 – 19:00 Uhr</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Mittwoch</th>
+                <td>08:00 – 19:00 Uhr</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Donnerstag</th>
+                <td>08:00 – 19:00 Uhr</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Freitag</th>
+                <td>08:00 – 19:00 Uhr</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Samstag</th>
+                <td>09:00 – 14:00 Uhr</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="ct-hours-note">
+            Telefonisch sind wir ebenfalls ab 08:00 Uhr für Sie da.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- PRAWA KOLUMNA: FORMULARZ -->
+
+      <form
+        class="ct-form"
+        id="ct-form"
+        action="/api/kontakt"
+        method="post"
+        aria-labelledby="ct-form-title"
+      >
+        <h3 id="ct-form-title">
+          Schreiben Sie uns.
+        </h3>
+
+        <p class="ct-form-intro">
+          Für Ihren Terminwunsch oder eine allgemeine Anfrage.
+        </p>
+
+        <div class="ct-fields">
+
+          <div class="ct-field">
+            <label for="ct-name">
+              Ihr Name *
+            </label>
+
+            <input
+              id="ct-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              maxlength="120"
+              required
+            >
+          </div>
+
+          <div class="ct-field">
+            <label for="ct-email">
+              E-Mail-Adresse *
+            </label>
+
+            <input
+              id="ct-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="254"
+              required
+            >
+          </div>
+
+          <div class="ct-field ct-field-wide">
+            <label for="ct-phone">
+              Telefon
+              <span class="ct-optional">(optional)</span>
+            </label>
+
+            <input
+              id="ct-phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              maxlength="50"
+            >
+          </div>
+
+          <div class="ct-field ct-field-wide">
+            <label for="ct-message">
+              Ihre Nachricht *
+            </label>
+
+            <textarea
+              id="ct-message"
+              name="message"
+              rows="4"
+              maxlength="3000"
+              required
+            ></textarea>
+          </div>
+
+        </div>
+
+        <!-- OBOWIĄZKOWA ZGODA -->
+
+        <div class="ct-consent">
+          <input
+            id="ct-consent"
+            name="consent"
+            type="checkbox"
+            value="accepted"
+            required
+          >
+
+          <label for="ct-consent">
+            Ich willige ein, dass die Praxisgemeinschaft Sprachsch[Dil]
+            meine angegebenen personenbezogenen Daten zur Bearbeitung
+            und Beantwortung meiner Anfrage verarbeitet.
+            Ich kann diese Einwilligung jederzeit mit Wirkung für die
+            Zukunft per E-Mail an info@stuttgarter-logopaedie.de
+            widerrufen. Weitere Informationen finden Sie in der
+            <a
+              href="datenschutz.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Datenschutzerklärung</a>.
+            *
+          </label>
+        </div>
+
+        <!-- PRZYCISK I CLOUDFLARE -->
+
+        <div class="ct-actions">
+
+          <div
+            class="ct-security"
+            role="group"
+            aria-label="Cloudflare Turnstile"
+          >
+            <!-- Klucz testowy — do podmiany przed publikacją. -->
+
+            <div
+              id="ct-turnstile"
+              data-sitekey="1x00000000000000000000AA"
+            ></div>
+          </div>
+
+          <button class="ct-submit" type="submit">
+            <span class="ct-submit-text">
+              Nachricht senden
+            </span>
+
+            <span class="ct-submit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 18 18 6M6 6h12v12"/>
+              </svg>
+            </span>
+          </button>
+
+        </div>
+
+        <p
+          class="ct-status"
+          id="ct-status"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </form>
+
+      <!-- DÓŁ: DOJAZD I MAPA -->
+
+      <div class="ct-bottom">
+
+        <div class="ct-directions">
+          <h3>Anfahrt</h3>
+
+          <p class="ct-route-text">
+            Unsere Praxis befindet sich unweit vom Wilhelmsplatz
+            in der Schlosserstraße 5.
+          </p>
+
+          <p class="ct-route-text">
+            <strong>Öffentliche Verkehrsmittel:</strong><br>
+            Österreichischer Platz · U34, U9, U1 und Bus 44.<br>
+            Von dort sind es nur noch etwa 3 Fußminuten zu uns.
+          </p>
+        </div>
+
+        <div class="ct-map-panel">
+          <div class="ct-map">
+            <iframe
+              src="https://maps.google.com/maps?q=Schlosserstra%C3%9Fe%205%2C%2070180%20Stuttgart&amp;z=16&amp;output=embed"
+              title="Standort der Praxis Sprachsch[Dil], Schlosserstraße 5, Stuttgart"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <a
+            class="ct-route-link"
+            href="https://www.google.com/maps/dir/?api=1&amp;destination=Schlosserstra%C3%9Fe%205%2C%2070180%20Stuttgart"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Route in Google Maps planen ↗
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     OPINIE
+============================== -->
+
+<section
+  class="reviews-section"
+  id="bewertungen"
+  aria-labelledby="rv-title"
+  aria-roledescription="Karussell"
+>
+ <div class="rv-container">
+
+  <div class="rv-heading">
+    <p class="rv-eyebrow">
+      Erfahrungen &amp; Eindrücke
+    </p>
+
+    <h2 id="rv-title">
+      Patientenstimmen
+    </h2>
+
+    <p class="rv-description">
+      Eine persönliche Begleitung, eine herzliche Atmosphäre
+      und Zeit für Ihre Fragen – damit Sie und Ihr Kind
+      sich bei uns wohlfühlen.
+    </p>
+  </div>
+
+  <div
+    class="rv-viewport"
+    tabindex="0"
+    aria-label="Beispielbewertungen. Mit den Pfeiltasten wechseln."
+  >
+    <div class="rv-track" aria-live="off"></div>
+  </div>
+
+    <div
+      class="rv-controls"
+      role="group"
+      aria-label="Diashow steuern"
+    >
+      <button
+        class="rv-control rv-prev"
+        type="button"
+        aria-label="Vorherige Bewertung"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m14 6-6 6 6 6"/>
+        </svg>
+      </button>
+
+      <span class="rv-position" aria-hidden="true">
+        <span class="rv-current">01</span>
+        /
+        <span class="rv-total">20</span>
+      </span>
+
+      <button
+        class="rv-control rv-next"
+        type="button"
+        aria-label="Nächste Bewertung"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m10 6 6 6-6 6"/>
+        </svg>
+      </button>
+
+      <button
+        class="rv-control rv-toggle"
+        type="button"
+        aria-label="Diashow pausieren"
+        aria-pressed="false"
+      >
+        Pause
+      </button>
+    </div>
+
+    <p
+      class="rv-live"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></p>
+
+    <noscript>
+      <p>
+        Bitte aktivieren Sie JavaScript, um die Diashow zu sehen.
+      </p>
+    </noscript>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- ==============================
+     STOPKA
+============================== -->
+
+<footer class="site-footer">
+  <div class="ft-container">
+
+    <div class="ft-main">
+
+      <!-- LOGO I PODPIS -->
+
+      <div class="ft-brand">
+        <a
+          class="ft-logo"
+          href="#start"
+          aria-label="Sprachsch[Dil] – zum Seitenanfang"
+        >
+          <img
+            src="/photos/logo.png"
+            alt="Sprachsch[Dil] – Praxis für Logopädie"
+            width="2025"
+            height="776"
+            loading="lazy"
+            decoding="async"
+          >
+        </a>
+
+        <p class="ft-brand-description">
+          Praxisgemeinschaft für Logopädie<br>
+          im Herzen von Stuttgart.
+        </p>
+      </div>
+
+      <!-- DANE KONTAKTOWE -->
+
+      <div class="ft-info">
+        <h2 class="ft-title">
+          Wir sind für Sie da.
+        </h2>
+
+        <address class="ft-address">
+          Schlosserstraße 5 · 70180 Stuttgart
+        </address>
+
+        <div class="ft-contact">
+          <a href="tel:+4971188811074">
+            <span class="ft-label">Telefon</span>
+            +49 (0)711 88811074
+          </a>
+
+          <p>
+            <span class="ft-label">Fax</span>
+            +49 (0)711 41004018
+          </p>
+
+          <a
+            class="ft-email"
+            href="mailto:info@stuttgarter-logopaedie.de"
+          >
+            info@stuttgarter-logopaedie.de
+          </a>
+        </div>
+      </div>
+
+      <!-- NAWIGACJA -->
+
+      <nav class="ft-nav" aria-label="Footernavigation">
+        <ul>
+          <li>
+            <a href="#team">
+              <span>Unser Team</span>
+              <span class="ft-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#kontakt">
+              <span>Kontakt &amp; Anfahrt</span>
+              <span class="ft-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/therapie-erwachsene/">
+              <span>Für Erwachsene</span>
+              <span class="ft-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/therapie-kinder-und-jugendliche/">
+              <span>Für Kinder &amp; Jugendliche</span>
+              <span class="ft-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- DOLNA LINIA -->
+
+    <div class="ft-bottom">
+      <p class="ft-copyright">
+        © 2026 Sprachsch[Dil]. Alle Rechte vorbehalten.
+      </p>
+
+      <nav class="ft-legal" aria-label="Rechtliche Informationen">
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/impressum/">Impressum</a>
+      </nav>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- GALERIA OTWIERANA PRZYCISKIEM PRAXIS -->
+
+  <dialog class="praxis-dialog" aria-labelledby="praxis-title">
+    <div class="praxis-dialog-head">
+      <h2 id="praxis-title">Unsere Praxis</h2>
+
+      <button
+        class="praxis-close"
+        type="button"
+        aria-label="Galerie schließen"
+      >
+        <svg class="icon" aria-hidden="true">
+          <use href="#close"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="praxis-photos">
+      <img
+        src="../photos/1.jpg"
+        alt="Eva Katharina Weber und Lena Pasqualini in ihrer Praxis"
+      >
+
+      <img
+        src="../photos/2.jpg"
+        alt="Der Eingangsbereich der Praxis"
+      >
+
+      <img
+        src="../photos/3.jpg"
+        alt="Einblick in die Behandlungsräume"
+      >
+    </div>
+
+    <p class="praxis-caption">
+      Sprachsch[Dil] · Schlosserstraße 5 · 70180 Stuttgart
+    </p>
+  </dialog>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const mobile = matchMedia("(max-width: 1023px)");
+
+      const finePointer = matchMedia(
+        "(hover: hover) and (pointer: fine)"
+      );
+
+      const nav = document.querySelector(".nav-bar");
+      const opener = document.querySelector(".mobile-toggle");
+      const backdrop = document.querySelector(".menu-backdrop");
+
+      const pageParts = [
+        document.querySelector(".logo-link"),
+        opener,
+        document.querySelector(".contact-strip"),
+        document.querySelector("main")
+      ];
+
+      const dropdowns = [
+        ...document.querySelectorAll(".has-submenu")
+      ];
+
+      const hoverTimers = new Map();
+      let drawerOpen = false;
+
+      /* PODMENU */
+
+      function closeDropdown(item) {
+        clearTimeout(hoverTimers.get(item));
+
+        item
+          .querySelectorAll("[aria-controls]")
+          .forEach((button) => {
+            button.setAttribute("aria-expanded", "false");
+          });
+
+        item.querySelector(".submenu").hidden = true;
+      }
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach((item) => {
+          if (item !== except) closeDropdown(item);
+        });
+      }
+
+      function openDropdown(item) {
+        closeAllDropdowns(item);
+        clearTimeout(hoverTimers.get(item));
+
+        item.querySelector(".submenu").hidden = false;
+
+        item
+          .querySelectorAll("[aria-controls]")
+          .forEach((button) => {
+            button.setAttribute("aria-expanded", "true");
+          });
+      }
+
+      dropdowns.forEach((item) => {
+        const toggle = item.querySelector(".submenu-toggle");
+
+        item
+          .querySelectorAll("[aria-controls]")
+          .forEach((button) => {
+            button.addEventListener("click", () => {
+              const open =
+                toggle.getAttribute("aria-expanded") === "true";
+
+              open ? closeDropdown(item) : openDropdown(item);
+            });
+          });
+
+        item.addEventListener("pointerenter", () => {
+          if (!mobile.matches && finePointer.matches) {
+            openDropdown(item);
+          }
+        });
+
+        item.addEventListener("pointerleave", () => {
+          if (!mobile.matches && finePointer.matches) {
+            hoverTimers.set(
+              item,
+              setTimeout(() => {
+                if (!item.contains(document.activeElement)) {
+                  closeDropdown(item);
+                }
+              }, 180)
+            );
+          }
+        });
+
+        item.addEventListener("focusout", (event) => {
+          if (
+            !mobile.matches &&
+            !item.contains(event.relatedTarget)
+          ) {
+            closeDropdown(item);
+          }
+        });
+
+        toggle.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowDown") {
+            event.preventDefault();
+            openDropdown(item);
+            item.querySelector(".submenu a").focus();
+          }
+        });
+      });
+
+      /* MENU MOBILNE */
+
+      function setDrawer(open, restoreFocus = true) {
+        drawerOpen = open && mobile.matches;
+
+        nav.classList.toggle("is-open", drawerOpen);
+        backdrop.classList.toggle("is-open", drawerOpen);
+
+        opener.setAttribute(
+          "aria-expanded",
+          String(drawerOpen)
+        );
+
+        opener.setAttribute(
+          "aria-label",
+          drawerOpen
+            ? "Hauptmenü schließen"
+            : "Hauptmenü öffnen"
+        );
+
+        document.body.classList.toggle(
+          "menu-open",
+          drawerOpen
+        );
+
+        pageParts.forEach((part) => {
+          part.inert = drawerOpen;
+        });
+
+        nav.inert = mobile.matches && !drawerOpen;
+
+        if (mobile.matches) {
+          nav.setAttribute(
+            "aria-hidden",
+            String(!drawerOpen)
+          );
+        } else {
+          nav.removeAttribute("aria-hidden");
+        }
+
+        if (drawerOpen) {
+          requestAnimationFrame(() => {
+            nav.querySelector(".drawer-close").focus();
+          });
+        } else {
+          closeAllDropdowns();
+
+          if (restoreFocus && mobile.matches) {
+            opener.focus();
+          }
+        }
+      }
+
+      opener.addEventListener("click", () => {
+        setDrawer(!drawerOpen);
+      });
+
+      document
+        .querySelector(".drawer-close")
+        .addEventListener("click", () => {
+          setDrawer(false);
+        });
+
+      backdrop.addEventListener("click", () => {
+        setDrawer(false);
+      });
+
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (drawerOpen) {
+            setDrawer(false, false);
+          } else {
+            closeAllDropdowns();
+          }
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".has-submenu")) {
+          closeAllDropdowns();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          const item = document.activeElement.closest(
+            ".has-submenu"
+          );
+
+          if (
+            item &&
+            item
+              .querySelector(".submenu-toggle")
+              .getAttribute("aria-expanded") === "true"
+          ) {
+            event.preventDefault();
+
+            closeDropdown(item);
+            item.querySelector(".submenu-toggle").focus();
+
+            return;
+          }
+
+          if (drawerOpen) {
+            event.preventDefault();
+            setDrawer(false);
+          } else {
+            closeAllDropdowns();
+          }
+        }
+
+        if (event.key === "Tab" && drawerOpen) {
+          const focusable = [
+            ...nav.querySelectorAll("a[href], button")
+          ].filter((element) => {
+            return element.getClientRects().length > 0;
+          });
+
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+
+          if (
+            event.shiftKey &&
+            document.activeElement === first
+          ) {
+            event.preventDefault();
+            last.focus();
+          } else if (
+            !event.shiftKey &&
+            document.activeElement === last
+          ) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
+
+      mobile.addEventListener("change", () => {
+        setDrawer(false, false);
+        syncHeroHeight();
+      });
+
+      setDrawer(false, false);
+
+      /* WYSOKOŚĆ HERO */
+
+      function syncHeroHeight() {
+        const height = document
+          .querySelector(".site-header")
+          .getBoundingClientRect()
+          .height;
+
+        document.documentElement.style.setProperty(
+          "--header-height",
+          Math.ceil(height) + "px"
+        );
+      }
+
+      if ("ResizeObserver" in window) {
+        const observer = new ResizeObserver(syncHeroHeight);
+
+        observer.observe(
+          document.querySelector(".site-header")
+        );
+      }
+
+      window.addEventListener("resize", syncHeroHeight);
+
+      if (document.fonts) {
+        document.fonts.ready.then(syncHeroHeight);
+      }
+
+      syncHeroHeight();
+
+      /* SLAJDY */
+
+      const hero = document.querySelector(".hero");
+      const slides = [...document.querySelectorAll(".hero-slide")];
+      const dots = [...document.querySelectorAll(".slide-dot")];
+
+      const counter = document.querySelector(
+        ".slide-counter .current"
+      );
+
+      const pauseButton = document.querySelector(".slider-pause");
+
+      const announcement = document.querySelector(
+        ".slide-announcement"
+      );
+
+      const praxisDialog = document.querySelector(".praxis-dialog");
+
+      const reducedMotion = matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      let current = 0;
+      let paused = reducedMotion.matches;
+      let focused = false;
+      let timer;
+
+      function schedule() {
+        clearTimeout(timer);
+
+        if (
+          paused ||
+          focused ||
+          document.hidden ||
+          praxisDialog.open
+        ) {
+          return;
+        }
+
+        timer = setTimeout(() => {
+          showSlide(current + 1);
+        }, 7000);
+      }
+
+      function showSlide(index, announce = false) {
+        current =
+          (index + slides.length) % slides.length;
+
+        slides.forEach((slide, index) => {
+          const active = index === current;
+
+          slide.classList.toggle("is-active", active);
+
+          slide.setAttribute(
+            "aria-hidden",
+            String(!active)
+          );
+        });
+
+        dots.forEach((dot, index) => {
+          dot.setAttribute(
+            "aria-pressed",
+            String(index === current)
+          );
+        });
+
+        counter.textContent = String(current + 1).padStart(
+          2,
+          "0"
+        );
+
+        if (announce) {
+          announcement.textContent =
+            "Foto " +
+            (current + 1) +
+            " von " +
+            slides.length +
+            ". " +
+            slides[current].querySelector("img").alt;
+        }
+
+        schedule();
+      }
+
+      function updatePause() {
+        pauseButton.classList.toggle("is-paused", paused);
+
+        pauseButton.setAttribute(
+          "aria-pressed",
+          String(paused)
+        );
+
+        pauseButton.setAttribute(
+          "aria-label",
+          paused
+            ? "Diashow starten"
+            : "Diashow pausieren"
+        );
+
+        schedule();
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          showSlide(index, true);
+        });
+      });
+
+      document
+        .querySelector(".slider-prev")
+        .addEventListener("click", () => {
+          showSlide(current - 1, true);
+        });
+
+      document
+        .querySelector(".slider-next")
+        .addEventListener("click", () => {
+          showSlide(current + 1, true);
+        });
+
+      pauseButton.addEventListener("click", () => {
+        paused = !paused;
+
+        if (!paused) {
+          focused = false;
+        }
+
+        updatePause();
+      });
+
+      hero.addEventListener("focusin", () => {
+        focused = true;
+        schedule();
+      });
+
+      hero.addEventListener("focusout", (event) => {
+        focused = hero.contains(event.relatedTarget);
+        schedule();
+      });
+
+      document.addEventListener(
+        "visibilitychange",
+        schedule
+      );
+
+      reducedMotion.addEventListener("change", () => {
+        paused = reducedMotion.matches;
+        updatePause();
+      });
+
+      updatePause();
+
+      /* GALERIA PRAXIS */
+
+      let praxisTrigger = null;
+
+      document
+        .querySelectorAll("[data-open-praxis]")
+        .forEach((button) => {
+          button.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            praxisTrigger = button;
+            praxisDialog.showModal();
+
+            document.body.classList.add("gallery-open");
+
+            schedule();
+          });
+        });
+
+      document
+        .querySelector(".praxis-close")
+        .addEventListener("click", () => {
+          praxisDialog.close();
+        });
+
+      praxisDialog.addEventListener("click", (event) => {
+        if (event.target !== praxisDialog) return;
+
+        const bounds = praxisDialog.getBoundingClientRect();
+
+        if (
+          event.clientX < bounds.left ||
+          event.clientX > bounds.right ||
+          event.clientY < bounds.top ||
+          event.clientY > bounds.bottom
+        ) {
+          praxisDialog.close();
+        }
+      });
+
+      praxisDialog.addEventListener("close", () => {
+        document.body.classList.remove("gallery-open");
+
+        if (praxisTrigger) {
+          if (
+            mobile.matches &&
+            praxisTrigger.closest(".nav-bar")
+          ) {
+            opener.focus();
+          } else {
+            praxisTrigger.focus();
+          }
+        }
+
+        schedule();
+      });
+    })();
+
+ (() => {
+    "use strict";
+
+    const section = document.querySelector(".praxis-metrics");
+
+    if (!section) return;
+
+    const counters = [
+      ...section.querySelectorAll(".pm-count")
+    ];
+
+    const reducedMotion = matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    const formatter = new Intl.NumberFormat("de-DE");
+
+    // Pełne wartości pozostają widoczne bez animacji.
+    if (
+      reducedMotion.matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.some(
+          (entry) => entry.isIntersecting
+        );
+
+        if (!visible) return;
+
+        // Zliczanie uruchamia się tylko raz.
+        observer.disconnect();
+
+        const duration = 2200;
+        let startedAt;
+
+        function animate(timestamp) {
+          if (startedAt === undefined) {
+            startedAt = timestamp;
+          }
+
+          const progress = reducedMotion.matches
+            ? 1
+            : Math.min(
+                (timestamp - startedAt) / duration,
+                1
+              );
+
+          // Łagodne wyhamowanie przy wartości docelowej.
+          const eased = 1 - Math.pow(1 - progress, 3);
+
+          counters.forEach((counter) => {
+            const target = Number(counter.dataset.count);
+
+            counter.textContent = formatter.format(
+              Math.round(target * eased)
+            );
+          });
+
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          }
+        }
+
+        requestAnimationFrame(animate);
+      },
+      {
+        threshold: 0.25
+      }
+    );
+
+    observer.observe(section);
+  })();
+  </script>
+
+<!-- ==============================
+     OBSŁUGA FORMULARZA
+============================== -->
+
+<script>
+  (() => {
+    "use strict";
+
+    const form = document.getElementById("ct-form");
+    const container = document.getElementById("ct-turnstile");
+
+    if (!form || !container) return;
+
+    const status = document.getElementById("ct-status");
+    const button = form.querySelector('button[type="submit"]');
+    const buttonText = form.querySelector(".ct-submit-text");
+
+    let widgetId = null;
+    let token = "";
+    let sending = false;
+
+    function showStatus(message, state = "") {
+      status.textContent = message;
+      status.dataset.state = state;
+    }
+
+    /* Cloudflare uruchamia tę funkcję po załadowaniu biblioteki. */
+
+    window.ctTurnstileReady = () => {
+      if (!window.turnstile || widgetId !== null) return;
+
+      widgetId = window.turnstile.render(container, {
+        sitekey: container.dataset.sitekey,
+        theme: "light",
+        size: "flexible",
+        language: "de",
+        action: "contact",
+
+        callback: (value) => {
+          token = value;
+        },
+
+        "expired-callback": () => {
+          token = "";
+        },
+
+        "error-callback": () => {
+          token = "";
+
+          showStatus(
+            "Die Sicherheitsprüfung konnte nicht geladen werden. " +
+            "Bitte versuchen Sie es erneut oder kontaktieren Sie " +
+            "uns per E-Mail.",
+            "error"
+          );
+        }
+      });
+    };
+
+    if (window.turnstile) {
+      window.ctTurnstileReady();
+    }
+
+    /* Wysyłka do serwera. */
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (sending || !form.reportValidity()) return;
+
+      if (!token) {
+        showStatus(
+          "Bitte schließen Sie die Sicherheitsprüfung ab.",
+          "error"
+        );
+        return;
+      }
+
+      const data = new FormData(form);
+
+      data.set("cf-turnstile-response", token);
+
+      sending = true;
+      button.disabled = true;
+      buttonText.textContent = "Wird gesendet …";
+      form.setAttribute("aria-busy", "true");
+
+      showStatus("");
+
+      const controller = new AbortController();
+
+      const timeout = setTimeout(() => {
+        controller.abort();
+      }, 20000);
+
+      try {
+        /*
+          /api/kontakt musi:
+          1. sprawdzić dane i obowiązkową zgodę;
+          2. zweryfikować token w Cloudflare Siteverify;
+          3. obsłużyć wysłanie wiadomości;
+          4. dopiero wtedy zwrócić JSON: { "success": true }.
+        */
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: data,
+          headers: {
+            "Accept": "application/json"
+          },
+          signal: controller.signal
+        });
+
+        const result = await response.json().catch(() => null);
+
+        if (!response.ok || result?.success !== true) {
+          throw new Error("Submission failed");
+        }
+
+        form.reset();
+
+        showStatus(
+          "Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.",
+          "success"
+        );
+      } catch {
+        showStatus(
+          "Ihre Nachricht konnte nicht übermittelt werden. " +
+          "Bitte schreiben Sie direkt an " +
+          "info@stuttgarter-logopaedie.de oder rufen Sie uns an.",
+          "error"
+        );
+      } finally {
+        clearTimeout(timeout);
+
+        token = "";
+
+        if (window.turnstile && widgetId !== null) {
+          window.turnstile.reset(widgetId);
+        }
+
+        sending = false;
+        button.disabled = false;
+        buttonText.textContent = "Nachricht senden";
+
+        form.removeAttribute("aria-busy");
+      }
+    });
+  })();
+</script>
+
+<script>
+(() => {
+  "use strict";
+
+  function initReviews() {
+    const section = document.getElementById("bewertungen");
+
+    if (!section || section.dataset.rvReady === "true") return;
+
+    const viewport = section.querySelector(".rv-viewport");
+    const track = section.querySelector(".rv-track");
+
+    if (!viewport || !track) return;
+
+    section.dataset.rvReady = "true";
+
+    /* Przykładowe teksty do podglądu projektu. */
+
+    const reviews = [
+  {
+    name: "Anna",
+    text: "Mein Kind fühlt sich hier wohl und geht gerne zu den Terminen. Besonders schön finde ich, wie geduldig auf seine Fragen und Ideen eingegangen wird. Auch wir Eltern bekommen verständliche Hinweise, wie wir die Übungen spielerisch in unseren Alltag einbauen können. Dadurch fühlen wir uns gut begleitet."
+  },
+  {
+    name: "Mehmet",
+    text: "Die Gespräche sind angenehm und die Erklärungen gut verständlich. Ich kann jederzeit nachfragen und habe das Gefühl, dass mein Anliegen aufmerksam angehört wird."
+  },
+  {
+    name: "Julia",
+    text: "Mein Sohn freut sich besonders auf die abwechslungsreichen Spiele und Aufgaben. Mir gefällt, dass seine Interessen aufgegriffen werden und er neugierig mitmachen kann. Nach den Terminen erzählt er oft noch zu Hause, was ihm besonders gefallen hat."
+  },
+  {
+    name: "Ayşe",
+    text: "Meine Tochter braucht etwas Zeit, um mit neuen Menschen vertraut zu werden. Hier darf sie erst einmal ankommen und in ihrem eigenen Tempo mitmachen. Der ruhige, freundliche Umgang tut ihr gut. Inzwischen fragt sie schon zu Hause, wann wir wieder in die Praxis gehen."
+  },
+  {
+    name: "Thomas",
+    text: "Ich schätze die ruhige Art und die nachvollziehbaren Erklärungen. Auch wenn mir eine Aufgabe nicht sofort gelingt, bleibt genug Zeit, sie noch einmal gemeinsam durchzugehen."
+  },
+  {
+    name: "Elena",
+    text: "Schon beim ersten Gespräch habe ich mich willkommen gefühlt. Meine Fragen wurden in Ruhe beantwortet, ohne dass das Gespräch gehetzt wirkte. Besonders angenehm finde ich die persönliche Atmosphäre und den respektvollen Umgang."
+  },
+  {
+    name: "Lukas",
+    text: "Die Termine sind gut strukturiert und trotzdem entspannt. Ich weiß, woran wir gerade arbeiten und weshalb die jeweiligen Übungen ausgewählt werden. Das hilft mir, auch zwischen den Terminen dranzubleiben. Bei Unsicherheiten kann ich offen nachfragen."
+  },
+  {
+    name: "Zeynep",
+    text: "Unser Kind war anfangs eher zurückhaltend, wurde aber sehr geduldig an die Aufgaben herangeführt. Wir schätzen besonders, dass es mitmachen darf, ohne sich gedrängt zu fühlen."
+  },
+  {
+    name: "Sabine",
+    text: "Als Mutter finde ich es hilfreich, dass die Übungen verständlich erklärt und gemeinsam ausprobiert werden. So kann ich besser einschätzen, wie wir zu Hause unterstützen können. Dabei bleibt auch Raum für unsere Beobachtungen und Fragen aus dem Familienalltag."
+  },
+  {
+    name: "Daniel",
+    text: "Der Umgang ist herzlich und gleichzeitig professionell. Besonders schätze ich, dass aufmerksam zugehört wird und ich meine Fragen ohne Hemmungen stellen kann."
+  },
+  {
+    name: "Sofia",
+    text: "Meine Tochter kommt gerne in die Praxis und erzählt anschließend oft von den Spielen. Die Aufgaben sind abwechslungsreich und werden mit viel Geduld erklärt. Mir ist wichtig, dass sie sich wohlfühlt und auch einmal etwas ausprobieren darf, ohne sofort alles richtig machen zu müssen. Genau diese entspannte Atmosphäre gefällt uns."
+  },
+  {
+    name: "Emre",
+    text: "Ich werde freundlich empfangen und fühle mich während der Gespräche ernst genommen. Die Erklärungen sind klar, auch wenn mir ein Thema zunächst fremd ist. Es ist angenehm, dass ich bei Bedarf noch einmal nachfragen kann."
+  },
+  {
+    name: "Miriam",
+    text: "Mir gefällt, dass die Termine einen klaren Ablauf haben und trotzdem Platz für meine aktuellen Fragen bleibt. Die nächsten Schritte werden gemeinsam besprochen, sodass ich mich gut einbezogen fühle."
+  },
+  {
+    name: "Jonas",
+    text: "Mein Sohn ist sehr neugierig und bringt gerne eigene Ideen mit. Darauf wird freundlich eingegangen, ohne dass der rote Faden verloren geht. Besonders die spielerischen Aufgaben machen ihm Freude. Für uns Eltern ist es schön zu sehen, dass er gerne wiederkommt."
+  },
+  {
+    name: "Nadia",
+    text: "Wir fühlen uns als Familie willkommen und gut angesprochen. Unser Kind wird respektvoll begleitet, und auch unsere Fragen als Eltern werden in Ruhe beantwortet. Die freundliche Atmosphäre macht die Termine für uns angenehm."
+  },
+  {
+    name: "Claudia",
+    text: "Besonders schätze ich die Geduld, wenn ich eine Erklärung oder Übung noch einmal brauche. Ich fühle mich dabei weder unter Zeitdruck noch unwohl."
+  },
+  {
+    name: "Aylin",
+    text: "Mein Kind geht gerne zu den Terminen und freut sich auf die unterschiedlichen Aufgaben. Es darf Fragen stellen, eigene Ideen einbringen und auch einmal über einen Fehler lachen. Die Übungen für zu Hause werden so erklärt, dass wir sie gut verstehen. Das macht es leichter, sie ohne zusätzlichen Druck in unseren Alltag einzubauen."
+  },
+  {
+    name: "Katharina",
+    text: "Die ruhige Atmosphäre hilft mir, mich auf die Übungen einzulassen. Ich empfinde die Begleitung als aufmerksam und persönlich. Besonders angenehm ist, dass auch kleine Unsicherheiten offen angesprochen werden können."
+  },
+  {
+    name: "Martin",
+    text: "Klare Erklärungen und ein freundlicher Umgang machen die Termine für mich angenehm. Ich schätze es, dass nicht einfach eine Aufgabe auf die nächste folgt, sondern auch erklärt wird, worauf ich dabei achten soll."
+  },
+  {
+    name: "Laura",
+    text: "Unsere Tochter fühlt sich in der Praxis wohl und freut sich auf die nächsten Termine. Besonders gefallen uns die herzliche Begrüßung und der geduldige Umgang. Auch wenn sie einmal einen ruhigeren Tag hat, wird verständnisvoll darauf eingegangen. Wir erleben die Gespräche als offen und fühlen uns als Eltern gut einbezogen."
+  }
+];
+
+    const count = reviews.length;
+    const colors = ["yellow", "green", "brown"];
+
+    const currentLabel = section.querySelector(".rv-current");
+    const totalLabel = section.querySelector(".rv-total");
+    const pauseButton = section.querySelector(".rv-toggle");
+    const live = section.querySelector(".rv-live");
+
+    const motion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    const fragment = document.createDocumentFragment();
+
+    /* Trzy kopie kart tworzą nieskończoną pętlę. */
+
+    for (let copy = 0; copy < 3; copy++) {
+      reviews.forEach((review, index) => {
+        const card = document.createElement("article");
+
+        card.className =
+          `rv-card rv-card--${colors[index % colors.length]}`;
+
+        card.setAttribute("role", "group");
+        card.setAttribute("aria-roledescription", "Folie");
+        card.setAttribute(
+          "aria-label",
+          `${index + 1} von ${count}`
+        );
+        card.setAttribute("aria-hidden", "true");
+
+        const avatar = document.createElement("span");
+
+        avatar.className = "rv-avatar";
+        avatar.setAttribute("aria-hidden", "true");
+        avatar.textContent = review.name.charAt(0);
+
+        const name = document.createElement("h3");
+
+        name.className = "rv-name";
+        name.textContent = review.name;
+
+        const quote = document.createElement("blockquote");
+
+        quote.className = "rv-quote";
+
+        const paragraph = document.createElement("p");
+
+        paragraph.textContent = `„${review.text}“`;
+
+        quote.append(paragraph);
+        card.append(avatar, name, quote);
+        fragment.append(card);
+      });
+    }
+
+    track.replaceChildren(fragment);
+
+    const cards = [...track.children];
+
+    let position = count;
+    let animating = false;
+    let paused = false;
+
+    let timer;
+    let fallback;
+    let pointerStart = null;
+
+    totalLabel.textContent = String(count).padStart(2, "0");
+
+    function logicalIndex() {
+      return ((position % count) + count) % count;
+    }
+
+    function update() {
+      cards.forEach((card, index) => {
+        const active = index === position;
+
+        card.classList.toggle("is-active", active);
+        card.setAttribute("aria-hidden", String(!active));
+      });
+
+      currentLabel.textContent = String(
+        logicalIndex() + 1
+      ).padStart(2, "0");
+    }
+
+    function render(animate) {
+      const card = cards[position];
+
+      const offset =
+        viewport.clientWidth / 2 -
+        card.offsetWidth / 2 -
+        card.offsetLeft;
+
+      track.style.transition =
+        animate && !motion.matches
+          ? "transform 650ms cubic-bezier(.22,.68,.25,1)"
+          : "none";
+
+      track.style.transform =
+        `translate3d(${offset}px, 0, 0)`;
+    }
+
+    function finish() {
+      if (!animating) return;
+
+      clearTimeout(fallback);
+
+      /* Niewidoczne przejście do środkowej kopii. */
+
+      position = count + logicalIndex();
+      animating = false;
+
+      render(false);
+      update();
+    }
+
+    function move(direction, announce = false) {
+      if (animating) return;
+
+      animating = true;
+      position += direction;
+
+      update();
+      render(true);
+
+      if (announce) {
+        live.textContent =
+          `Beispiel ${logicalIndex() + 1} von ${count}: ` +
+          `${reviews[logicalIndex()].name}.`;
+      }
+
+      if (motion.matches) {
+        finish();
+      } else {
+        fallback = setTimeout(finish, 750);
+      }
+    }
+
+    /* AUTOMATYCZNE PRZESUNIĘCIE CO 6 SEKUND */
+
+    function startAuto() {
+      clearInterval(timer);
+
+      if (!paused && !document.hidden) {
+        timer = setInterval(() => {
+          move(1);
+        }, 6000);
+      }
+    }
+
+    function updatePause() {
+      pauseButton.textContent = paused ? "Weiter" : "Pause";
+
+      pauseButton.setAttribute(
+        "aria-pressed",
+        String(paused)
+      );
+
+      pauseButton.setAttribute(
+        "aria-label",
+        paused ? "Diashow starten" : "Diashow pausieren"
+      );
+
+      startAuto();
+    }
+
+    /* STRZAŁKI */
+
+    section.querySelector(".rv-prev").addEventListener(
+      "click",
+      () => {
+        move(-1, true);
+        startAuto();
+      }
+    );
+
+    section.querySelector(".rv-next").addEventListener(
+      "click",
+      () => {
+        move(1, true);
+        startAuto();
+      }
+    );
+
+    /* PAUZA */
+
+    pauseButton.addEventListener("click", () => {
+      paused = !paused;
+      updatePause();
+    });
+
+    /* KONIEC ANIMACJI */
+
+    track.addEventListener("transitionend", (event) => {
+      if (
+        event.target === track &&
+        event.propertyName === "transform"
+      ) {
+        finish();
+      }
+    });
+
+    /* OBSŁUGA KLAWIATURY */
+
+    viewport.addEventListener("keydown", (event) => {
+      if (
+        event.key !== "ArrowLeft" &&
+        event.key !== "ArrowRight"
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+
+      move(event.key === "ArrowRight" ? 1 : -1, true);
+      startAuto();
+    });
+
+    /* PRZESUWANIE PALCEM LUB MYSZĄ */
+
+    viewport.addEventListener("pointerdown", (event) => {
+      if (!event.isPrimary || event.button !== 0) return;
+
+      pointerStart = {
+        x: event.clientX,
+        y: event.clientY
+      };
+
+      viewport.setPointerCapture(event.pointerId);
+      clearInterval(timer);
+    });
+
+    viewport.addEventListener("pointerup", (event) => {
+      if (!pointerStart) return;
+
+      const dx = event.clientX - pointerStart.x;
+      const dy = event.clientY - pointerStart.y;
+
+      pointerStart = null;
+
+      if (
+        Math.abs(dx) > 40 &&
+        Math.abs(dx) > Math.abs(dy)
+      ) {
+        move(dx < 0 ? 1 : -1, true);
+      }
+
+      startAuto();
+    });
+
+    viewport.addEventListener("pointercancel", () => {
+      pointerStart = null;
+      startAuto();
+    });
+
+    /* ZMIANA SZEROKOŚCI EKRANU */
+
+    window.addEventListener("resize", () => {
+      finish();
+      render(false);
+    });
+
+    /* WZNOWIENIE PO POWROCIE DO KARTY PRZEGLĄDARKI */
+
+    document.addEventListener(
+      "visibilitychange",
+      startAuto
+    );
+
+    /* USTAWIENIA OGRANICZONEGO RUCHU */
+
+    motion.addEventListener("change", () => {
+      finish();
+      render(false);
+    });
+
+    /* START */
+
+    update();
+    render(false);
+    updatePause();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initReviews,
+      { once: true }
+    );
+  } else {
+    initReviews();
+  }
+})();
+</script>
+
+<script>
+(() => {
+  function initWaySection() {
+    const section = document.getElementById("erste-schritte");
+
+    if (!section || section.dataset.wpReady === "true") return;
+
+    section.dataset.wpReady = "true";
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    if (
+      reducedMotion.matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      return;
+    }
+
+    const elements = section.querySelectorAll(".wp-reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    section.classList.add("wp-animate");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initWaySection,
+      { once: true }
+    );
+  } else {
+    initWaySection();
+  }
+})();
+</script>
+
+<script>
+(() => {
+  function initMottoFade() {
+    const section = document.querySelector(".motto-section");
+
+    if (!section || section.dataset.mtReady === "true") return;
+
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+
+        section.classList.add("mt-visible");
+        observer.disconnect();
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    section.dataset.mtReady = "true";
+    section.classList.add("mt-fade");
+    observer.observe(section);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initMottoFade,
+      { once: true }
+    );
+  } else {
+    initMottoFade();
+  }
+})();
+</script>
+
+<!-- Bibliotekę Cloudflare dodaj na stronie tylko jeden raz. -->
+
+<script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=ctTurnstileReady&amp;render=explicit"
+  async
+  defer
+></script>
+
+<button
+  class="back-to-top"
+  type="button"
+  aria-label="Zurück nach oben"
+  hidden
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<script>
+  (() => {
+    function initBackToTop() {
+      const button = document.querySelector(".back-to-top");
+
+      if (!button) return;
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      function updateVisibility() {
+        button.hidden =
+          window.scrollY < 400 &&
+          document.activeElement !== button;
+      }
+
+      button.addEventListener("click", () => {
+        const focusTarget =
+          document.querySelector(".site-header .logo-link") ||
+          document.querySelector(".skip-link");
+
+        if (focusTarget) {
+          focusTarget.focus({ preventScroll: true });
+        }
+
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: reducedMotion.matches ? "instant" : "smooth"
+        });
+      });
+
+      window.addEventListener("scroll", updateVisibility, {
+        passive: true
+      });
+
+      window.addEventListener("pageshow", updateVisibility);
+      button.addEventListener("blur", updateVisibility);
+
+      updateVisibility();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener(
+        "DOMContentLoaded",
+        initBackToTop,
+        { once: true }
+      );
+    } else {
+      initBackToTop();
+    }
+  })();
+</script>
+
+</body>
+</html>
